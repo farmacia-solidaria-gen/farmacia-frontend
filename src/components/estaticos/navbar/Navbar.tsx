@@ -3,13 +3,13 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Box, Grid, Button } from '@mui/material';
-import { Link } from '@material-ui/core';
+import {Link} from 'react-router-dom';
 import './Navbar.css'
 
 function Navbar() {
   return (
     <> 
-        <AppBar position="static" className="cor">
+        <AppBar position="static" className="cor-navbar">
                 <Toolbar variant="dense">
                     <Box className='cursor'>
                         <Typography variant="h5" color="inherit">
@@ -39,13 +39,13 @@ function Navbar() {
                                 Sobre nós
                             </Typography>
                         </Box>
-                        {/* <Link to='/' className='text-decorator-none'> */}
+                        <Link to='/' className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="body2">
                                    <Button className='btn-logout' variant='contained'>logout</Button> 
                                 </Typography>
                             </Box>
-                        {/* </Link> */}
+                        </Link>
                     </Box>
                    </Grid>
 

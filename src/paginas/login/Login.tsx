@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Box, Typography, TextField, Button} from '@mui/material';
-// import { Link } from 'react-router-dom';
+ import { Link } from 'react-router-dom';
 import './Login.css';
 
 function Login() {
@@ -14,11 +14,11 @@ function Login() {
                         <TextField id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth/>
 
                         <Box className='botao'>
-                            {/* <Link to='/home' className='text-decorator-none'> */}
+                            <Link to='/home' className='text-decorator-none'>
                                 <Button type='submit' variant='contained' className='logar'>
                                     Logar
                                 </Button>
-                            {/* </Link> */}
+                            </Link>
                         </Box>
                     </form>
                     <Box className='subtitulos'>
