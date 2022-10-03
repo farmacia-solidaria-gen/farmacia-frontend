@@ -6,7 +6,11 @@ import './App.css';
 import { BrowserRouter, Route, Routes}from 'react-router-dom';
 // import Login from './paginas/login/Login'
 
+// Comentado 
+// comentado
+
 function App() {
+
   return(
     // <BrowserRouter>
     // <Navbar />
@@ -26,6 +30,7 @@ function App() {
     </p>
     </>
     )
+
 }
 
 export default App;

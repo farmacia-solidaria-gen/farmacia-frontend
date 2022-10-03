@@ -1,0 +1,13 @@
+.cor {
+  background: #80cbc4 !important;
+}
+
+.btn-logout {
+  background: #00796b !important;
+}
+
+.btn-logout:hover {
+  color: black;
+  background: #01579b !important;
+  box-shadow: 0 8px 50px 10px rgba(0, 0, 0, 0.3) !important;
+}
