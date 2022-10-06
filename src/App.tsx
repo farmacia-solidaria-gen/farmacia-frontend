@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './App.css';
 import Navbar from './components/estaticos/navbar/Navbar';
@@ -10,9 +11,11 @@ import Listaproduto from './components/produtos/listaproduto/ListaProduto;'
 
 
 
+
 function App() {
-  return(
+  return (
     <BrowserRouter>
+
     <Navbar />
     <div style={{ minHeight: '100vh' }}>
     <Routes>
@@ -26,5 +29,6 @@ function App() {
     <Footer />
     </ BrowserRouter >
     );
+
 }
 export default App;
