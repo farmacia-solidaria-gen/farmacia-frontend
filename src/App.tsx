@@ -5,7 +5,7 @@ import Footer from "./components/estaticos/footer/Footer";
 import Home from "./paginas/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./paginas/login/Login";
-import ListaPostagem from "./components/postagens/listapostagem/ListaPostagem";
+import ListaProduto from "./components/produtos/listaproduto/ListaProduto";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/posts" element={<ListaPostagem />} />
+          <Route path="/prod" element={<ListaProduto />} />
         </Routes>
       </div>
       <Footer />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Grid, Typography } from '@mui/material';
 import './Home.css';
-import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+import TabProduto from '../../components/produtos/tabproduto/TabProduto';
 
 function Home() {
   return (
@@ -22,7 +22,7 @@ function Home() {
           <img src="https://thumbs.dreamstime.com/b/farmaceuta-wektoru-ilustracja-farmaceuta-na-tle-p%C3%B3%C5%82ki-z-lekarstwami-71719701.jpg" alt="" width="600px" height="500px" />
         </Grid>
         <Grid xs={12} style={{ backgroundColor: "white" }}>
-        <TabPostagem/>
+        <TabProduto/>
         </Grid>
       </Grid>
     </>
