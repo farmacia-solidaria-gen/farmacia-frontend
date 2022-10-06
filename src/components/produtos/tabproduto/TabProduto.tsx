@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { AppBar, Tab, Tabs, Typography } from '@material-ui/core';
+import { AppBar, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@material-ui/lab';
-import '../TabProduto.css';
+import './TabProduto.css';
 import { Box } from '@mui/material';
 import ListaProduto from '../listaproduto/ListaProduto';
 

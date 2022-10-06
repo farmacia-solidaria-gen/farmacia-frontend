@@ -7,7 +7,7 @@ import Home from './paginas/home/Home';
 import { BrowserRouter, Route, Routes}from 'react-router-dom';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
-import Listaproduto from './components/produtos/listaproduto/ListaProduto;'
+import ListaProduto from './components/produtos/listaproduto/ListaProduto';
 
 
 
