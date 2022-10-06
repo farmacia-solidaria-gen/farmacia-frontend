@@ -1,0 +1,21 @@
+.imagem2{
+    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fjornal.usp.br%2Fciencias%2Flevantamento-aponta-os-desafios-da-enfermagem-no-brasil%2F&psig=AOvVaw0FptqpiRAdeDS9Wit3H3lW&ust=1665143663260000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPChidvFy_oCFQAAAAAdAAAAABAD);
+    background-repeat: no-repeat;
+    width: 80vh;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.textos2{
+    font-weight: bold !important;
+}
+
+.btnCancelar{
+    margin-right: 20px !important;
+    background-color: red !important;
+}
+
+.btnCadastrar {
+    background-color: rgb(0, 174, 255) !important;
+}
