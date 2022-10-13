@@ -7,6 +7,7 @@ interface UserLogin{
     cpf: string;
     endereco: string
     token: string
+
     
     
 

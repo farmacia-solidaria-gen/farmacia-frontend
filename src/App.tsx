@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./App.css";
 import Navbar from "./components/estaticos/navbar/Navbar";
@@ -8,6 +9,7 @@ import Login from "./paginas/login/Login";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 import ListaProduto from "./components/produtos/listaproduto/ListaProduto";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
+
 
 function App() {
   return (
