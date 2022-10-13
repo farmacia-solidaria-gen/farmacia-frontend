@@ -3,7 +3,7 @@ import {Link, useNavigate} from "react-router-dom";
 import useLocalStorage from 'react-use-localstorage';
 import React, { useState, useEffect, ChangeEvent } from 'react';
 
-import { login } from '../../services/Service';
+import { login } from '../../service/Service';
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
 import { toNamespacedPath } from 'node:path/win32';

@@ -3,10 +3,10 @@ interface UserLogin{
     nome: string;
     usuario: string;
     senha: string;
-    foto: string;
-    CPF: number;
-    endereco: string
-    token: string
+    foto: string,
+    CPF: string,
+    endereco: string,
+    token: string,
     
     
 
