@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/material';
 import './ListaCategoria.css';
 import useLocalStorage from 'react-use-localstorage';
-// import Categoria from '../../../models/Categoria';
+import Categoria from '../../../models/Categoria';
 // import { busca } from '../../../service/Service';
 // import { useSelector } from 'react-redux';
 // import { TokenState } from '../../../store/tokens/tokensReducer';

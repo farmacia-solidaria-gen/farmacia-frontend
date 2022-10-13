@@ -17,7 +17,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import User from '../../../models/User';
-import { busca, buscaId, put } from '../../../service/Service';
+import { busca, buscaId, post, put, } from '../../../service/Service';
 import ListaProduto from '../listaproduto/ListaProduto';
 
 function CadastroProduto() {
@@ -25,10 +25,9 @@ function CadastroProduto() {
 
   const { id } = useParams<{ id: string }>();
 
-  const [categoria, setCategoria] = useState<Categoria[]>([]);
+  const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [token, setToken] = useLocalStorage('token');
   
- 
   
 
   const [categoria, setCategoria] = useState<Categoria>({
@@ -47,7 +46,7 @@ function CadastroProduto() {
     fabricante: '',
     quantidade: 0,
     preco: 0,
-    //categoria: null,
+    categoria: null,
     //usuario: null 
   });
 
@@ -74,13 +73,13 @@ function CadastroProduto() {
             theme: "colored",
             progress: undefined,
         });
-        navigate("/login")
+        navigate("/login")}},[token]);
 
   useEffect(() => {
     setProduto({
       ...produto,
       categoria: categoria,
-      usuario: usuario
+      //usuario: usuario
     });
   }, [categoria]);
 
@@ -100,7 +99,7 @@ function CadastroProduto() {
   }, [id]);
 
   async function getCategoria() {
-    await busca('/categoria', setCategoria, {
+    await busca('/categoria', setCategorias, {
       headers: {
         Authorization: token,
       },
@@ -131,7 +130,7 @@ function CadastroProduto() {
       }
     } else {
       try {
-        await produto(`/produto`, produto, setProduto, {
+        await post(`/produto`, produto, setProduto, {
           headers: {
             Authorization: token,
           },
@@ -158,7 +157,7 @@ function CadastroProduto() {
           </Typography>
 
           <TextField
-            value={ListaProduto.nome}
+            value={produto.nome}
             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProduto(e)}
             id="nome"
             label="nome"
@@ -193,9 +192,9 @@ function CadastroProduto() {
                 })
               }
             >
-              {categoria.map((item) => (
+              {categorias.map((item) => (
                 <MenuItem value={item.id} style={{ display: 'block' }}>
-                  {item.descricao}
+                  {item.tipo}
                 </MenuItem>
               ))}
             </Select>

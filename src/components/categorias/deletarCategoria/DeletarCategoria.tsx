@@ -39,17 +39,17 @@ function DeletarCategoria() {
       }
 
       function sim() {
-          navigate('/posts')
+          navigate('/produtos')
           deleteId(`/categoria/${id}`, {
             headers: {
               'Authorization': token
             }
           });
-          alert('Tema deletado com sucesso');
+          alert('Categoria deletado com sucesso');
         }
       
         function nao() {
-          navigate('/posts')
+          navigate('/produtos')
         }
   
   return (

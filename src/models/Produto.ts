@@ -1,9 +1,12 @@
+import Categoria from "./Categoria";
+
 interface Produto{
     id: number;
-    nome: String;
-    descricao: String;
-    fabricante: String;
+    nome: string;
+    descricao: string;
+    fabricante: string;
     quantidade: number;
     preco: number;
+    categoria: Categoria| null;
 }
 export default Produto;
