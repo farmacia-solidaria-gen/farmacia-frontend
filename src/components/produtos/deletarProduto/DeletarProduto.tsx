@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../service/Service';
 import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
+import Produto from '../../../models/Produto';
 
 
 function DeletarProduto() {

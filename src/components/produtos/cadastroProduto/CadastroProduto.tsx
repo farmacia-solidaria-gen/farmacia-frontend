@@ -9,8 +9,15 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
+import userEvent from '@testing-library/user-event';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import useLocalStorage from 'react-use-localstorage';
+import Categoria from '../../../models/Categoria';
+import Produto from '../../../models/Produto';
+import User from '../../../models/User';
+import { busca, buscaId, put } from '../../../service/Service';
 import ListaProduto from '../listaproduto/ListaProduto';
 
 function CadastroProduto() {
@@ -19,10 +26,10 @@ function CadastroProduto() {
   const { id } = useParams<{ id: string }>();
 
   const [categoria, setCategoria] = useState<Categoria[]>([]);
-
-  const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
-  )
+  const [token, setToken] = useLocalStorage('token');
+  
+ 
+  
 
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
@@ -30,9 +37,8 @@ function CadastroProduto() {
   });
 
   
-  const userId = useSelector<TokenState, TokenState['id']>(
-    (state) => state.id
-  )
+ //const userId = useSelector<TokenState, TokenState['id']>(
+  //  (state) => state.id  )
 
   const [produto, setProduto] = useState<Produto>({
     id: 0,
@@ -41,13 +47,13 @@ function CadastroProduto() {
     fabricante: '',
     quantidade: 0,
     preco: 0,
-    categoria: null,
-    usuario: null 
+    //categoria: null,
+    //usuario: null 
   });
 
  
-  const [usuario, setUsuario] = useState<Usuario>({
-    id: +userId,
+  const [usuario, setUsuario] = useState<User>({
+    id: 0,
     nome: '',
     usuario: '',
     senha: '',
@@ -74,7 +80,7 @@ function CadastroProduto() {
     setProduto({
       ...produto,
       categoria: categoria,
-      usuario: usuario 
+      usuario: usuario
     });
   }, [categoria]);
 
@@ -180,7 +186,7 @@ function CadastroProduto() {
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"
               onChange={(e) =>
-                buscaId(`/temas/${e.target.value}`, setCategoria, {
+                buscaId(`/categoria/${e.target.value}`, setCategoria, {
                   headers: {
                     Authorization: token,
                   },

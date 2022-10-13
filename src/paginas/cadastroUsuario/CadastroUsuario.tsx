@@ -3,14 +3,12 @@ import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { Box } from '@mui/material';
-
 import User from '../../models/User';
-
 import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
 import UserLogin from '../../models/UserLogin';
 
-//ta osso
+
 
 function CadastroUsuario() {
     let navigate = useNavigate();
@@ -23,7 +21,8 @@ function CadastroUsuario() {
             senha: '',
             foto:'',
             cpf:'',
-            endereco:''
+            endereco:'',
+            token:''
         })
 
     const [userResult, setUserResult] = useState<UserLogin>(
@@ -34,7 +33,8 @@ function CadastroUsuario() {
             senha:'',
             foto:'',
             cpf:'',
-            endereco:''
+            endereco:'',
+            token:''
         })
 
     useEffect(() => {
