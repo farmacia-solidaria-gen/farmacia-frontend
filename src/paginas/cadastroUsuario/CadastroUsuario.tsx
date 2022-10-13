@@ -7,7 +7,7 @@ import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
 import UserLogin from '../../models/UserLogin';
 
-//de
+//ta osso
 
 function CadastroUsuario() {
     let navigate = useNavigate();
