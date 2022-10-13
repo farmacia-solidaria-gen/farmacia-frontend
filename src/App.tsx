@@ -12,6 +12,7 @@ import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCa
 function App() {
   return (
     <BrowserRouter>
+
       <Navbar />
       <div style={{ minHeight: "100vh" }}>
         <Routes>
@@ -32,5 +33,8 @@ function App() {
       <Footer />
     </BrowserRouter>
   );
+
+
+
 }
 export default App;
