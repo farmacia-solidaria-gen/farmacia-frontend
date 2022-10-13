@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes}from 'react-router-dom';
 import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaProduto from './components/produtos/listaproduto/ListaProduto';
+import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
 
 
 
@@ -24,6 +25,7 @@ function App() {
     <Route path="/home" element={<Home />} />
     <Route path="/cadastroUsuario" element={<CadastroUsuario />} />
     <Route path="/posts" element={<ListaProduto />} />
+    <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
     </Routes>
     </div>
     <Footer />
