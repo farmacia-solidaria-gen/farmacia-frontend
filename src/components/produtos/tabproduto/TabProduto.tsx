@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { AppBar, Tab, Tabs, Typography } from '@material-ui/core';
+import { AppBar, Tab, Tabs, Typography } from '@mui/material';
 import { TabContext, TabPanel } from '@material-ui/lab';
-import '../TabProduto.css';
+import './TabProduto.css';
 import { Box } from '@mui/material';
 import ListaProduto from '../listaproduto/ListaProduto';
 
@@ -16,7 +16,7 @@ function TabProduto() {
       <TabContext value={value} >
         <AppBar position="static" className="header-container">
           <Tabs centered indicatorColor="secondary" onChange={handleChange}>
-            <Tab label="Todas os produtos" value="1"/>
+            <Tab label="Todos os produtos" value="1"/>
             <Tab label="Sobre nós" value="2" />
           </Tabs>
         </AppBar>

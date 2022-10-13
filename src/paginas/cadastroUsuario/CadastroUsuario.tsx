@@ -3,6 +3,9 @@ import { Grid, Typography, Button, TextField } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
 import { Box } from '@mui/material';
+
+import User from '../../models/User';
+
 import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
 import UserLogin from '../../models/UserLogin';
@@ -53,6 +56,8 @@ function CadastroUsuario() {
             [e.target.name]: e.target.value
         })
 
+        console.log(user)
+
     }
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -80,7 +85,7 @@ function CadastroUsuario() {
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
                         <TextField required value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='nome' label='nome' variant='outlined' name='nome' margin='normal' fullWidth />
                         <TextField required value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='usuario' label='usuario' variant='outlined' name='usuario' margin='normal'fullWidth />
-                        <TextField required value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='foto' label='foto (url)' variant='outlined' name='foto' margin='normal' fullWidth />
+                        <TextField value={user.foto} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='foto' label='foto (url)' variant='outlined' name='foto' margin='normal' fullWidth />
                         <TextField required value={user.cpf} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='cpf' label='cpf' variant='outlined' name='cpf' margin='normal' fullWidth />
                         <TextField required value={user.endereco} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='endereco' label='endereco' variant='outlined' name='endereco' margin='normal' fullWidth />
                         <TextField required value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />

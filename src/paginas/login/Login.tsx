@@ -1,4 +1,4 @@
-import { Box,Grid,TextField,Typography, Button} from '@material-ui/core';
+import { Box,Grid,TextField,Typography, Button} from '@mui/material';
 import {Link, useNavigate} from "react-router-dom";
 import useLocalStorage from 'react-use-localstorage';
 import React, { useState, useEffect, ChangeEvent } from 'react';
@@ -6,7 +6,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import { login } from '../../service/Service';
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
-import { toNamespacedPath } from 'node:path/win32';
+
 
 function Login(){
     let history = useNavigate();
@@ -18,7 +18,7 @@ function Login(){
             usuario:'',
             senha:'',
             foto:'',
-            CPF: 0,
+            cpf: '',
             endereco:'',
             token:'',
          }
@@ -41,7 +41,7 @@ function Login(){
             async function onSubmit( e: ChangeEvent<HTMLFormElement>){
                 e.preventDefault();
                 try{
-                    await login(`/usuarios/logar`, userLogin, setToken)
+                    await login(`/usuario/logar`, userLogin, setToken)
                 
 
                     alert('Usuário logado com sucesso!');
