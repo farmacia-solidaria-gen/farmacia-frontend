@@ -12,16 +12,19 @@ function ListaProduto() {
         <Card variant="outlined">
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Produto
+              Nome
             </Typography>
             <Typography variant="h5" component="h2">
-              Título
+              Descricao do Produto
             </Typography>
             <Typography variant="body2" component="p">
-              Descrição do Produto
+              Fabricante do Produto
             </Typography>
             <Typography variant="body2" component="p">
-              Produtos
+              Quantidade
+            </Typography>
+            <Typography variant="body2" component="p">
+              Preco
             </Typography>
           </CardContent>
           <CardActions>
