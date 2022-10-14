@@ -13,12 +13,19 @@ import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto"
 import CadastroCategoria from "./components/categorias/cadastroCategoria/CadastroCategoria";
 import ListaCategoria from "./components/categorias/listaCategoria/ListaCategoria";
 import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProduto";
+import store from "./store/store";
+import {ToastContainer} from 'react-toastify';
+import { Provider } from "react-redux";
 
 
 
 
 function App() {
   return (
+
+    <Provider store={store}>
+    <ToastContainer />
+
     <BrowserRouter>
 
       <Navbar />
@@ -40,6 +47,7 @@ function App() {
       </div>
       <Footer />
     </BrowserRouter>
+    </Provider>
   );
 
 
