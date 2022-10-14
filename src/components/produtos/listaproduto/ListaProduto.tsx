@@ -1,13 +1,56 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import './ListaProduto.css';
 import { Box } from '@mui/material';
+import Produto from '../../../models/Produto';
+import { busca } from '../../../service/Service';
+import { toast } from 'react-toastify';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
 
 function ListaProduto() {
 
+    const [produtos, setProdutos] = useState<Produto[]>([])
+    let navigate = useNavigate();
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
+  
+    useEffect(() => {
+      if (token == "") {
+        toast.error('Você precisa estar logado!',{
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
+          progress: undefined,
+      });
+        navigate("/login")
+  
+      }
+    }, [token])
+  
+    async function getPost() {
+      await busca("/produtos", setProdutos, {
+        headers: {
+          'Authorization': token
+        }
+      })
+    }
+  
+    useEffect(() => {
+  
+      getPost()
+  
+    }, [produtos.length])
+    
   return (
     <>
+    {produtos.map(produtos => (
       <Box m={2} >
         <Card variant="outlined">
           <CardContent>
@@ -48,6 +91,8 @@ function ListaProduto() {
           </CardActions>
         </Card>
       </Box>
+))}
+      
     </>)
 }
 
