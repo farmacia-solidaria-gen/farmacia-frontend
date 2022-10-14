@@ -1,9 +1,9 @@
-import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from "@material-ui/core";
+import { Button, Container, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import Categoria from "../../../models/Categoria";
-import { busca, buscaId, post, put } from "../../../service/Service";
+import {  buscaId, post, put } from "../../../service/Service";
 
 function CadastroCategoria(){
     let navigate = useNavigate();
@@ -29,7 +29,7 @@ function CadastroCategoria(){
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/categoria/${id}`, setCategoria, {
+        buscaId(`/categorias/${id}`, setCategoria, {
             headers: {
               'Authorization': token
             }
@@ -47,18 +47,18 @@ function CadastroCategoria(){
 
         async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
             e.preventDefault()
-            console.log("categoria " + JSON.stringify(categoria))
+            console.log("categorias " + JSON.stringify(categoria))
 
             if (id !== undefined) {
                 console.log(categoria)
-                put(`/categoria`, categoria, setCategoria, {
+                put(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 })
                 alert('Categoria atualizado com sucesso');
             } else {
-                post(`/categoria`, categoria, setCategoria, {
+                post(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
@@ -70,7 +70,7 @@ function CadastroCategoria(){
         }
 
         function back() {
-           navigate('/categoria')
+           navigate('/categorias')
         }
     
         return (

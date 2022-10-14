@@ -9,7 +9,6 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import userEvent from '@testing-library/user-event';
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -18,7 +17,7 @@ import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import User from '../../../models/User';
 import { busca, buscaId, post, put, } from '../../../service/Service';
-import ListaProduto from '../listaproduto/ListaProduto';
+
 
 function CadastroProduto() {
   let navigate = useNavigate();
