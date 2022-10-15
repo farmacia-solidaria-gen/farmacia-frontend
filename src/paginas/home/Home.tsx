@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Button, Grid, Typography } from '@mui/material';
 import './Home.css';
 import TabProduto from '../../components/produtos/tabproduto/TabProduto';
+import { Link} from 'react-router-dom';
+import ModalProduto from "../../components/produtos/modalproduto/ModalProduto";
 
 function Home() {
   return (
@@ -14,8 +16,11 @@ function Home() {
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
+              <ModalProduto />
             </Box>
-            <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Produtos</Button>
+            <Link to="/posts" className='text'>
+            <Button variant="outlined"  style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Produtos</Button>
+            </Link>
           </Box>
         </Grid>
         <Grid item xs={6} >

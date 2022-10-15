@@ -4,10 +4,9 @@ import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/ma
 import './ListaCategoria.css';
 import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
-// import { busca } from '../../../service/Service';
 // import { useSelector } from 'react-redux';
 // import { TokenState } from '../../../store/tokens/tokensReducer';
-// import { toast } from 'react-toastify';
+ import { toast } from 'react-toastify';
 
 function ListaCategoria() {
     
