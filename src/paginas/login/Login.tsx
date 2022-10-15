@@ -1,56 +1,107 @@
 import { Box,Grid,TextField,Typography, Button} from '@mui/material';
 import {Link, useNavigate} from "react-router-dom";
-import useLocalStorage from 'react-use-localstorage';
 import React, { useState, useEffect, ChangeEvent } from 'react';
-
 import { login } from '../../service/Service';
 import './Login.css';
 import UserLogin from '../../models/UserLogin';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { addToken, addId } from '../../store/tokens/actions';
+
+//Comentado por Pamela Maikon
+
+ function Login() {
+
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [token, setToken] = useState ('');
+  
+    const [userLogin, setUserLogin] = useState<UserLogin>(
+      {
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        cpf: '',
+        endereco: '',
+        token: '',
+      }
+      )
+  
+      const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        cpf: '',
+        endereco: '',
+        token: '',
+      });
+  
+      function updatedModel(event: ChangeEvent<HTMLInputElement>) {
+        setUserLogin({
+          ...userLogin,
+                  
+          [event.target.name]: event.target.value 
+        })
+      }
+  
+      const [form, setForm] = useState(false)
+  
+      useEffect(() => {
+        if(userLogin.usuario !== '' && userLogin.senha !== '') {
+          setForm(true)
+        }
+      })
+  
+      useEffect(()=>{
+        if(token !== ''){
+          dispatch(addToken(token))
+          navigate('/home')
+        }
+      },[token])
+  
+      async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+        event.preventDefault();
+  
+        try{
+          await login(`/usuarios/logar`, userLogin, setRespUserLogin)
+        
+          toast.success('Usuário logado com sucesso!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined,
+        });
+        }catch(error){
+          toast.error('Dados incorretos!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined,
+        });
+        }  
+      }
+  
+      useEffect(() => {
+        if(respUserLogin.token !== '') {
+          dispatch(addToken(respUserLogin.token))
+          dispatch(addId(respUserLogin.id.toString()))
+          navigate('/home');
+        }
+      }, [respUserLogin.token])
 
 
-function Login(){
-    let history = useNavigate();
-    const [token, setToken]= useLocalStorage('token');
-    const[userLogin, setUserLogin]= useState<UserLogin>(
-         {
-            id:0,
-            nome:'',
-            usuario:'',
-            senha:'',
-            foto:'',
-            cpf: '',
-            endereco:'',
-            token:'',
-         }
-        )
-
-        function updatedModel( e: ChangeEvent<HTMLInputElement>){
-
-                setUserLogin({
-                    ...userLogin,
-                    [ e.target.name]:e.target.value
-                })
-        }       
-            useEffect(()=>{
-                if(token != ''){
-                    history('/home')
-                }
-            },[token])
-
-
-            async function onSubmit( e: ChangeEvent<HTMLFormElement>){
-                e.preventDefault();
-                try{
-                    await login(`/usuario/logar`, userLogin, setToken)
-                
-
-                    alert('Usuário logado com sucesso!');
-                }catch (error){
-                    alert('Dados do usuário inconsistentes. Erro ao logar!');
-
-                }
-                
-            }
     return(
         <Grid container direction='row' justifyContent='center' alignItems='center'>
             <Grid alignItems='center' xs={6}>

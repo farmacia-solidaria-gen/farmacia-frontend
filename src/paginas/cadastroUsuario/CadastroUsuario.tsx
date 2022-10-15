@@ -5,75 +5,107 @@ import './CadastroUsuario.css';
 import { Box } from '@mui/material';
 import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
-import UserLogin from '../../models/UserLogin';
+import { toast } from 'react-toastify';
+import User from '../../models/User';
 
-
+//Comentado por Pamela Maikon
 
 function CadastroUsuario() {
+
     let navigate = useNavigate();
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
-    const [user, setUser] = useState<UserLogin>(
+    const [user, setUser] = useState<User>(
         {
-            id: 0,
-            nome:'',
-            usuario:'',
-            senha: '',
-            foto:'',
-            cpf:'',
-            endereco:'',
-            token:''
-        })
-
-    const [userResult, setUserResult] = useState<UserLogin>(
-        {
-            id: 0,
-            nome:'',
-            usuario:'',
-            senha:'',
-            foto:'',
-            cpf:'',
-            endereco:'',
-            token:''
-        })
-
-    useEffect(() => {
-        if (userResult.id != 0) {
-            navigate("/login")
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        cpf: '',
+        endereco: '',
+        // token: '',
         }
-    }, [userResult])
-
-
+        )
+  
+    const [userResult, setUserResult] = useState<User>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            cpf: '',
+            endereco: '',
+            // token: '',
+        })
+  
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
         setConfirmarSenha(e.target.value)
     }
-
-
+  
+    const [cadastro, setCadastro] = useState(false)
+  
+    useEffect(() => {
+      if(user.nome.length > 3 && user.usuario !== '' && user.senha.length >= 8) {
+        setCadastro(true)
+      }
+    })
+  
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
+  
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-
-        console.log(user)
-
+  
     }
-    async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
-        event.preventDefault();
-        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+        if(confirmarSenha === user.senha && user.senha.length >= 8){
           try {
-            await cadastroUsuario('usuario/cadastrar', user, setUserResult);
-            alert('Usuário criado com sucesso. Efetue seu login! ');
+            await cadastroUsuario('usuarios/cadastrar', user, setUserResult);
+            toast.success('Usuário cadastrado com sucesso!', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: 'dark',
+              progress: undefined,
+          });
           } catch (error) {
-            alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+            toast.error('Falha ao cadastrar o usuário, por favor confira os campos!', {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: false,
+              draggable: false,
+              theme: 'dark',
+              progress: undefined,
+          });
           }
-        } else {
-          alert(
-            'Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.'
-          );
+        }else{
+          toast.error('Dados inconsistentes. Por Favor verificar as informações de cadastro!', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined,
+        });
         }
-      }   
-        
+    }
+  
+    useEffect(() => {
+      if (userResult.id !== 0) {
+          navigate("/login")
+      }
+  }, [userResult])
+  
        
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
@@ -109,4 +141,4 @@ function CadastroUsuario() {
     );
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;

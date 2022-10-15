@@ -10,33 +10,45 @@ import {
   Typography,
 } from '@mui/material';
 import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import useLocalStorage from 'react-use-localstorage';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
 import User from '../../../models/User';
 import { busca, buscaId, post, put, } from '../../../service/Service';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
-
+//Comentado por Pamela Maikon
 function CadastroProduto() {
+
   let navigate = useNavigate();
-
   const { id } = useParams<{ id: string }>();
-
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [token, setToken] = useLocalStorage('token');
-  
-  
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
+useEffect(() => {
+  if (token === "") {
+      toast.error('Você precisa estar logado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'dark',
+          progress: undefined,
+      });
+      navigate("/login")
+
+  }
+}, [token])
 
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
     tipo: '',
   });
-
-  
- //const userId = useSelector<TokenState, TokenState['id']>(
-  //  (state) => state.id  )
 
   const [produto, setProduto] = useState<Produto>({
     id: 0,
@@ -46,12 +58,15 @@ function CadastroProduto() {
     quantidade: 0,
     preco: 0,
     categoria: null,
-    //usuario: null 
+    usuario: null 
   });
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+)
 
  
   const [usuario, setUsuario] = useState<User>({
-    id: 0,
+    id: +userId,
     nome: '',
     usuario: '',
     senha: '',
@@ -61,7 +76,7 @@ function CadastroProduto() {
   })
 
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
         toast.error('Você precisa estar logado', {
             position: "top-right",
             autoClose: 2000,
@@ -78,7 +93,7 @@ function CadastroProduto() {
     setProduto({
       ...produto,
       categoria: categoria,
-      //usuario: usuario
+      usuario: usuario
     });
   }, [categoria]);
 
