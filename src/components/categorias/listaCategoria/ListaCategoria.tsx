@@ -1,101 +1,83 @@
-import React, {useState, useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/material';
-import './ListaCategoria.css';
-import useLocalStorage from 'react-use-localstorage';
+import { busca } from '../../../service/Service';
+import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import Categoria from '../../../models/Categoria';
-// import { useSelector } from 'react-redux';
-// import { TokenState } from '../../../store/tokens/tokensReducer';
- import { toast } from 'react-toastify';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaCategoria() {
-    
-const [categoria, setCategoria] = useState<Categoria[]>([])
-let navigate = useNavigate();
-const [token, setToken] = useLocalStorage('token');
+    //trazer a função de navegação interna
+    let navigate = useNavigate();
 
-//   const token = useSelector<TokenState, TokenState["tokens"]>(
-//     (state) => state.tokens
-//   );
+    // estado para gerenciar os temas que virão do backend
+    const [categorias, setCategorias] = useState<Categoria[]>([])
 
-useEffect(()=>{
-    if(token == ''){
-//       toast.error('Você precisa estar logado', {
-//         position: "top-right",
-//         autoClose: 2000,
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: false,
-//         draggable: false,
-//         theme: "colored",
-//         progress: undefined,
-//     });
-    navigate("/login")
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    //verificar se a pessoa tem token, se não tiver, mandar pra login
+    useEffect(() => {
+        if(token === '') {
+            toast.error('Você precisa estar logado', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
+            navigate('/login')
+        }
+    }, [token])
+
+    //função que realmente vai até o backend para buscar os temas
+    async function getTemas() {
+        await busca('/categoria', setCategorias, {
+            headers: {'Authorization': token}
+        })
     }
-}, [token])
 
+    //função para disparar a busca de temas assim que a tela for carregada
+    useEffect(() => {
+        getTemas()
+    }, [categorias.length])
 
-// async function getCategoria(){
-//     await busca("/categoria", setCategoria, {
-//     headers: {
-//         'Authorization': token
-//     }
-//     })
-// }
+    return (
+        <>
+            {/* mapeamento do array de temas, para recriar a estrutura inteira para cada tema existente */}
+            {categorias.map(categoria => (
+                <Box m={2} >
+                    <Card variant="outlined">
+                        <CardContent>
+                            <Typography color="textSecondary" gutterBottom>Tema</Typography>
+                            <Typography variant="h5" component="h2">{categoria.tipo}</Typography>
+                        </CardContent>
 
-
-// useEffect(()=>{
-//     getCategoria()
-// }, [categoria.length])
-
-return (
-    <>
-    {
-    categoria.map(categoria =>(
-
-    <Box m={2} key={categoria.id} display="flex" flexWrap="wrap" justifyContent="center">
-
-        <Card variant="outlined" className='margin'>
-        <CardContent>
-
-            <Typography color="textSecondary" gutterBottom>
-            Categoria
-            </Typography>
-
-            <Typography variant="h5" component="h2">
-            {categoria.tipo}
-            </Typography>
-        </CardContent>
-
-
-        <CardActions>
-            <Box display="flex" justifyContent="center" mb={1.5} >
-
-            <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                    atualizar
-                </Button>
+                        <CardActions>
+                            <Box display="flex" justifyContent="center" mb={1.5} >
+                                <Link to={`/formularioTema/${categoria.id}`} className="text-decorator-none">
+                                    <Box mx={1}>
+                                        <Button variant="contained" className="marginLeft" size='small' color="primary">atualizar</Button>
+                                    </Box>
+                                </Link>
+                                <Link to={`/deletarTema/${categoria.id}`} className="text-decorator-none">
+                                    <Box mx={1}>
+                                        <Button variant="contained" size='small'
+                                            color="secondary">deletar</Button>
+                                    </Box>
+                                </Link>
+                            </Box>
+                        </CardActions>
+                    </Card>
                 </Box>
-            </Link>
-
-
-            <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                <Button variant="contained" size='small' color="secondary">
-                    deletar
-                </Button>
-                </Box>
-            </Link>
-
-            </Box>
-        </CardActions>
-        </Card>
-    </Box>
-    ))
-    }
-    </>
-);
+            ))}
+        </>
+    );
 }
 
 export default ListaCategoria;

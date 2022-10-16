@@ -1,97 +1,121 @@
 import { Button, Container, TextField, Typography } from "@material-ui/core";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import Categoria from "../../../models/Categoria";
 import {  buscaId, post, put } from "../../../service/Service";
+import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
-function CadastroCategoria(){
+
+function CadastroCategoria() {
+
     let navigate = useNavigate();
+
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
-    const [categoria, setCategoria] = useState<Categoria>({
-        id: 0,
+
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
+
+    const [categoria, setCategoria] = useState<Categoria> ({
+        id:0,
         tipo: ''
     })
 
     useEffect(() => {
-        if (token == "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
-
+        if(token == '') {
+            toast.error('Você precisa estar logado', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
+            navigate('/login')
         }
-    }, [token])
+    }, [token]) 
 
-    useEffect(() =>{
-        if(id !== undefined){
+    useEffect(() => {
+        if(id !== undefined) {
             findById(id)
         }
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/categorias/${id}`, setCategoria, {
+        buscaId(`/categoria/${id}`, setCategoria, {
             headers: {
-              'Authorization': token
+                'Authorization': token
             }
-          })
-        }
+        })
+    }
 
-        function updatedTema(e: ChangeEvent<HTMLInputElement>) {
+    function updatedCategoria(event: ChangeEvent<HTMLInputElement>) {
+        setCategoria({
+            ...categoria,
+            [event.target.name]: event.target.value,
+        })
+    }
 
-            setCategoria({
-                ...categoria,
-                [e.target.name]: e.target.value,
+    async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
+        event.preventDefault()
+        console.log('categoria ' + JSON.stringify(categoria))
+
+        if(id !== undefined) {
+            console.log(categoria)
+            put(`/categoria`, categoria, setCategoria, {
+                headers: {
+                    'Authorization': token
+                }
             })
-
+            toast.success('Categoria atualizada com sucesso!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
+        } else {
+            post(`/categoria`, categoria, setCategoria, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+            toast.success('Categoria cadastrada com sucesso!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
         }
+        back()
+    }
 
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-            e.preventDefault()
-            console.log("categorias " + JSON.stringify(categoria))
+    function back() {
+        navigate('/categorias')
+    }
 
-            if (id !== undefined) {
-                console.log(categoria)
-                put(`/categorias`, categoria, setCategoria, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                alert('Categoria atualizado com sucesso');
-            } else {
-                post(`/categorias`, categoria, setCategoria, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                alert('Categoria cadastrado com sucesso');
-            }
-            back()
-
-        }
-
-        function back() {
-           navigate('/categorias')
-        }
-    
-        return (
-            <>
-           <Container maxWidth="sm" className="topo">
+    return (
+        <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro Categoria</Typography>
-                <TextField value={categoria.tipo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tipo" label="tipo" variant="outlined" name="tipo" margin="normal" fullWidth />
+                <TextField value={categoria.tipo} onChange={(event:ChangeEvent<HTMLInputElement>) => updatedCategoria(event)} id="tipo" label="tipo" variant="outlined" name="tipo" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
             </form>
         </Container>
-            </>
-           
-        )
-    }
-    export default CadastroCategoria;
+    )
+}
 
-
-
-    
-
-
+export default CadastroCategoria;

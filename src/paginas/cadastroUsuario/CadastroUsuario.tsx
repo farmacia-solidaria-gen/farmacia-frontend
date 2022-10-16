@@ -5,14 +5,15 @@ import './CadastroUsuario.css';
 import { Box } from '@mui/material';
 import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
-import UserLogin from '../../models/UserLogin';
+import User from '../../models/User';
+import { toast } from 'react-toastify'
 
 
 
 function CadastroUsuario() {
     let navigate = useNavigate();
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
-    const [user, setUser] = useState<UserLogin>(
+    const [user, setUser] = useState<User>(
         {
             id: 0,
             nome:'',
@@ -21,10 +22,10 @@ function CadastroUsuario() {
             foto:'',
             cpf:'',
             endereco:'',
-            token:''
+         
         })
 
-    const [userResult, setUserResult] = useState<UserLogin>(
+    const [userResult, setUserResult] = useState<User>(
         {
             id: 0,
             nome:'',
@@ -33,7 +34,7 @@ function CadastroUsuario() {
             foto:'',
             cpf:'',
             endereco:'',
-            token:''
+            
         })
 
     useEffect(() => {
@@ -55,17 +56,34 @@ function CadastroUsuario() {
             [e.target.name]: e.target.value
         })
 
-        console.log(user)
-
+        
     }
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault();
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
           try {
-            await cadastroUsuario('usuario/cadastrar', user, setUserResult);
-            alert('Usuário criado com sucesso. Efetue seu login! ');
+            await cadastroUsuario('usuarios/cadastrar', user, setUserResult);
+            toast.success('Usuário cadastrado com sucesso!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
           } catch (error) {
-            alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
           }
         } else {
           alert(
