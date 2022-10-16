@@ -3,20 +3,24 @@ import {Typography, Button, Box, Card, CardActions, CardContent } from "@mui/mat
 import './DeletarProduto.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../service/Service';
-import useLocalStorage from 'react-use-localstorage';
 import { toast } from 'react-toastify';
 import Produto from '../../../models/Produto';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function DeletarProduto() {
+
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+);
     const [produto, setProdutos] = useState<Produto>()
 
     useEffect(() => {
-        if (token == "") {
-          toast.error('Você precisa estar logado!',{
+        if (token === "") {
+          toast.error('Você precisa estar logado',{
             position: 'top-right',
             autoClose: 2000,
             hideProgressBar: false,
@@ -27,7 +31,6 @@ function DeletarProduto() {
             progress: undefined,
         });
             navigate("/login")
-    
         }
     }, [token])
 
@@ -67,6 +70,7 @@ function DeletarProduto() {
           function nao() {
             navigate('/produtos')
           }
+
   return (
     <>
       <Box m={2}>
@@ -77,11 +81,11 @@ function DeletarProduto() {
                 Deseja deletar o Produto:
               </Typography>
               <Typography color="textSecondary" >
-              {produto?.nome}
+                {produto?.nome}
               </Typography>
             </Box>
-
           </CardContent>
+
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
@@ -90,7 +94,7 @@ function DeletarProduto() {
               </Button>
               </Box>
               <Box>
-              <Button  onClick={nao} variant="contained" size='large' className='btnAtualizar'>
+              <Button onClick={nao} variant="contained" size='large' className='btnAtualizar'>
                 Não
               </Button>
               </Box>
@@ -101,4 +105,5 @@ function DeletarProduto() {
     </>
   );
 }
+
 export default DeletarProduto;
