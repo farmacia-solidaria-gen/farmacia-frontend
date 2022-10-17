@@ -8,9 +8,6 @@ interface UserLogin{
     endereco: string
     token: string
 
-    
-    
-
 }
 export default UserLogin;
 

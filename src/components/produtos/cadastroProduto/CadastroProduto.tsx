@@ -21,13 +21,31 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function CadastroProduto() {
-  
+
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+
+);
+useEffect(() => {
+  if (token === "") {
+      toast.error('Você precisa estar logado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'dark',
+          progress: undefined,
+      });
+      navigate("/login")
+
+  }
+}, [token])
+
 
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
@@ -42,8 +60,11 @@ function CadastroProduto() {
     quantidade: 0,
     preco: 0,
     categoria: null,
-    //usuario: null 
+    usuario: null 
   });
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+)
 
   const userId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
@@ -81,7 +102,7 @@ function CadastroProduto() {
     setProduto({
       ...produto,
       categoria: categoria,
-      //usuario: usuario
+      usuario: usuario
     });
   }, [categoria]);
 
