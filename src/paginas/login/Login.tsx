@@ -1,8 +1,18 @@
+
 import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Grid, Box, Typography, TextField, Button } from '@mui/material';
 import { Link, useNavigate} from 'react-router-dom';
+
 import { login } from '../../service/Service';
 import UserLogin from '../../models/UserLogin';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { addToken, addId } from '../../store/tokens/actions';
+
+
+
+ function Login() {
+
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/tokens/actions';
@@ -36,6 +46,38 @@ function Login() {
             token: '',
         });
 
+
+    let navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [token, setToken] = useState ('');
+  
+    const [userLogin, setUserLogin] = useState<UserLogin>(
+      {
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        cpf: '',
+        endereco: '',
+        token: '',
+      }
+      )
+  
+      const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        cpf: '',
+        endereco: '',
+        token: '',
+      });
+  
+   
+
+    return(
 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -83,6 +125,7 @@ function Login() {
         }
 
     return (
+
         <Grid container direction='row' justifyContent='center' alignItems='center'>
 
             <Grid alignItems='center' xs={6}>

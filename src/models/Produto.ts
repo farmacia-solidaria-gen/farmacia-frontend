@@ -1,4 +1,5 @@
 import Categoria from "./Categoria";
+import User from "./User";
 
 interface Produto{
     id: number;
@@ -8,5 +9,6 @@ interface Produto{
     quantidade: number;
     preco: number;
     categoria: Categoria| null;
+    usuario?: User | null;
 }
-export default Produto;
+export default Produto; //Comentado por Pamela Maikon

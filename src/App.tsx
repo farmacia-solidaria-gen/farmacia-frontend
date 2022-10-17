@@ -18,8 +18,6 @@ import {ToastContainer} from 'react-toastify';
 import { Provider } from "react-redux";
 
 
-
-
 function App() {
   return (
 
