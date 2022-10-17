@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
+import logo from '../../../img/logo.svg'
 
 
 
@@ -43,69 +44,85 @@ function Navbar() {
     if(token != ''){
 
         navbarComponent = <AppBar position="static" className="cor-navbar">
-
-       
-
         <Toolbar variant="dense">
-            <Box className='cursor'>
-                <Typography variant="h5" color="inherit">
-                   Logo
+          <Grid container justifyContent='space-between' alignItems='center'>
+          <Box>
+            <Link to="/home">
+              <Box className="cursor">
+                <Typography variant="h5" color="inherit" className="logo">
+                  <img src={logo} alt="" />
                 </Typography>
+              </Box>
+            </Link>
+          </Box>
+
+          <Box display="flex" justifyContent="center">
+            <Link to="/produtos" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Produtos
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/equipe" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Equipe
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/categorias" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Categorias
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/sobre" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Sobre nós
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/formularioCategoria" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Cadastrar Categoria
+                </Typography>
+              </Box>
+            </Link>
+          </Box>
+          
+          <Box>
+          <Link to="/" className="text-decorator-none">
+            <Box mx={1} className="cursor">
+              <Typography variant="body2">
+                <Button className="btn-logout" variant="outlined">
+                  sair
+                </Button>
+              </Typography>
             </Box>
-
-
-      
-
-           <Grid container justifyContent="flex-end">
-           <Box display="flex" justifyContent="flex-end">
-           <Link to="/home" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" color="inherit">
-                        Home
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/produtos" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" color="inherit">
-                        Produtos
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/categorias" className='text-decorator-none'>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" color="inherit" >
-                        Categorias
-                    </Typography>
-                </Box>
-                </Link>
-                <Link to="/formularioCategoria" className='text-decorator-none'>
-    <Box mx={1} className='cursor'>
-        <Typography variant="h6" color="inherit">
-        Cadastrar Categoria
-        </Typography>
-        </Box>
-        </Link>
-                <Box mx={1} className='cursor'>
-                    <Typography variant="h6" color="inherit">
-                        Sobre nós
-                    </Typography>
-                </Box>
-                <Link to='/' className='text-decorator-none'>
-                    <Box mx={1} className='cursor'>
-                        <Typography variant="body2">
-                           <Button className='btn-logout' variant='contained'>logout</Button> 
-                        </Typography>
-                    </Box>
-
-                    </Link>
-
-
-            </Box>
-           </Grid>
-
+          </Link>
+          </Box>
+          </Grid>
         </Toolbar>
-    </AppBar>
+      </AppBar>
     }
 
  

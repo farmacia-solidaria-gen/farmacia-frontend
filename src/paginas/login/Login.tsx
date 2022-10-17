@@ -83,7 +83,7 @@ function Login() {
         }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
+        <Grid container direction='row' justifyContent='center' alignItems='center' className='bg-l'>
 
             <Grid alignItems='center' xs={6}>
 
