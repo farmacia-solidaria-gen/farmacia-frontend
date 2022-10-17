@@ -16,15 +16,16 @@ import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProdu
 import store from "./store/store";
 import {ToastContainer} from 'react-toastify';
 import { Provider } from "react-redux";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
   return (
 
     <Provider store={store}>
-    <ToastContainer />
-
+    
     <BrowserRouter>
+    <ToastContainer />
 
       <Navbar />
       <div style={{ minHeight: "100vh" }}>

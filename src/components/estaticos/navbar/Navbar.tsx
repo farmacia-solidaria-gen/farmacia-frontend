@@ -1,16 +1,20 @@
-import React from 'react'
+import React from "react";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Box, Grid, Button } from '@mui/material';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from "react-router-dom";
 import './Navbar.css'
-import { TokenState } from '../../../store/tokens/tokensReducer';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToken } from '../../../store/tokens/actions';
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
+import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
 
+
+
+
 function Navbar() {
+
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
@@ -37,14 +41,21 @@ function Navbar() {
     var navbarComponent;
 
     if(token != ''){
-        navbarComponent=<AppBar position="static" className="cor-navbar">
+
+        navbarComponent = <AppBar position="static" className="cor-navbar">
+
+       
+
         <Toolbar variant="dense">
             <Box className='cursor'>
                 <Typography variant="h5" color="inherit">
                    Logo
                 </Typography>
             </Box>
-           
+
+
+      
+
            <Grid container justifyContent="flex-end">
            <Box display="flex" justifyContent="flex-end">
            <Link to="/home" className='text-decorator-none'>
@@ -86,18 +97,24 @@ function Navbar() {
                            <Button className='btn-logout' variant='contained'>logout</Button> 
                         </Typography>
                     </Box>
-                </Link>
+
+                    </Link>
+
+
             </Box>
            </Grid>
 
         </Toolbar>
     </AppBar>
     }
+
+ 
   return (
     <> 
         {navbarComponent}
+
     </>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

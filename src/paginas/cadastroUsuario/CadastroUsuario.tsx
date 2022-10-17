@@ -5,10 +5,10 @@ import './CadastroUsuario.css';
 import { Box } from '@mui/material';
 import { cadastroUsuario } from '../../service/Service';
 import './CadastroUsuario.css';
+
 import { toast } from 'react-toastify';
 import User from '../../models/User';
 
-//Comentado por Pamela Maikon
 
 function CadastroUsuario() {
 
@@ -16,16 +16,28 @@ function CadastroUsuario() {
     const [confirmarSenha,setConfirmarSenha] = useState<String>("")
     const [user, setUser] = useState<User>(
         {
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: '',
-        cpf: '',
-        endereco: '',
-        // token: '',
-        }
-        )
+
+            id: 0,
+            nome:'',
+            usuario:'',
+            senha: '',
+            foto:'',
+            cpf:'',
+            endereco:'',
+         
+        })
+
+    const [userResult, setUserResult] = useState<User>(
+        {
+            id: 0,
+            nome:'',
+            usuario:'',
+            senha:'',
+            foto:'',
+            cpf:'',
+            endereco:'',
+            
+
   
     const [userResult, setUserResult] = useState<User>(
         {
@@ -37,6 +49,7 @@ function CadastroUsuario() {
             cpf: '',
             endereco: '',
             // token: '',
+
         })
   
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
@@ -57,34 +70,36 @@ function CadastroUsuario() {
             ...user,
             [e.target.name]: e.target.value
         })
-  
+
     }
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha === user.senha && user.senha.length >= 8){
           try {
             await cadastroUsuario('usuarios/cadastrar', user, setUserResult);
-            toast.success('Usuário cadastrado com sucesso!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              theme: 'dark',
-              progress: undefined,
-          });
+
+            toast.success('Usuário cadastrado com sucesso!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
           } catch (error) {
-            toast.error('Falha ao cadastrar o usuário, por favor confira os campos!', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              theme: 'dark',
-              progress: undefined,
-          });
+            toast.error('Dados inconsistentes. Favor verificar as informações de cadastro!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+
           }
         }else{
           toast.error('Dados inconsistentes. Por Favor verificar as informações de cadastro!', {

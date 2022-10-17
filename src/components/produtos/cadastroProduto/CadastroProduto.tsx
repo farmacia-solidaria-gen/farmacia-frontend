@@ -15,7 +15,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
-import User from '../../../models/User';
 import { busca, buscaId, post, put, } from '../../../service/Service';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
@@ -27,6 +26,9 @@ function CadastroProduto() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
+
+  );
+
 
 );
 useEffect(() => {
@@ -45,6 +47,7 @@ useEffect(() => {
 
   }
 }, [token])
+
 
 
   const [categoria, setCategoria] = useState<Categoria>({
@@ -69,6 +72,8 @@ useEffect(() => {
   const userId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
   )
+
+
 
   /*
   const [usuario, setUsuario] = useState<User>({
@@ -177,15 +182,19 @@ useEffect(() => {
   }
 
   function back() {
-    navigate('/produto')
-  }
+
+    navigate('/produtos')
+
+  
 
   return (
     <Container maxWidth="sm" className="topo">
         <form onSubmit={onSubmit}>
             <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produto</Typography>
-            <TextField value={produto.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-            <TextField value={produto.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+
+            <TextField value={produto.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
+            <TextField value={produto.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descricao" name="descricao" variant="outlined" margin="normal" fullWidth />
+
 
             <FormControl >
                 <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
@@ -212,6 +221,8 @@ useEffect(() => {
 
 export default CadastroProduto;
 
-function updatedCategoria(event: React.ChangeEvent<HTMLInputElement>): void {
-  throw new Error('Function not implemented.');
-}
+
+// function updatedCategoria(event: React.ChangeEvent<HTMLInputElement>): void {
+//   throw new Error('Function not implemented.');
+// }
+

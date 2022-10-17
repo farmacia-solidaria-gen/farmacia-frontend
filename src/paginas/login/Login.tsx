@@ -1,15 +1,46 @@
 
-import React, { useState, useEffect, ChangeEvent } from 'react';
-import { Grid, Box, Typography, TextField, Button } from '@mui/material';
-import { Link, useNavigate} from 'react-router-dom';
+import React, { useState, useEffect, ChangeEvent } from "react";
+import { Grid, Typography, TextField, Button } from "@material-ui/core";
+import { Link, useNavigate } from "react-router-dom";
+import "./Login.css";
+import { Box } from "@mui/material";
+import { login } from "../../service/Service";
+import { useDispatch } from "react-redux";
+import { addId, addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify";
+import UserLogin from "../../models/UserLogin";
 
-import { login } from '../../service/Service';
-import UserLogin from '../../models/UserLogin';
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
-import { addToken, addId } from '../../store/tokens/actions';
+function Login() {
 
 
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [token, setToken] = useState('');
+
+
+  const [userLogin, setUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    cpf: "",
+    endereco: "",
+    token: "",
+  });
+
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
+    cpf: "",
+    endereco: "",
+    token: "",
+  });
+
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
  function Login() {
 
@@ -20,32 +51,7 @@ import { toast } from 'react-toastify';
 
 function Login() {
     const dispatch = useDispatch();
-    let navigate = useNavigate();
-    const [token, setToken] = useState('');
-    const [userLogin, setUserLogin] = useState<UserLogin>(
-        {
-            id: 0,
-            nome: '',
-            usuario: '',
-            senha: '',
-            foto: '',
-            cpf: '',
-            endereco: '',
-            token: '',
-        }
-        );
-
-        const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
-            id: 0,
-            nome: '',
-            usuario: '',
-            senha: '',
-            foto: '',
-            cpf: '',
-            endereco: '',
-            token: '',
-        });
-
+  
 
     let navigate = useNavigate();
     const dispatch = useDispatch();
@@ -212,3 +218,4 @@ function Login() {
 }
 
 export default Login;
+
