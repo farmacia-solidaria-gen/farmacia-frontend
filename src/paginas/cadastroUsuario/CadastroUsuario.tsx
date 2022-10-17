@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import User from '../../models/User';
 
 
+
 function CadastroUsuario() {
 
     let navigate = useNavigate();
@@ -36,21 +37,10 @@ function CadastroUsuario() {
             foto:'',
             cpf:'',
             endereco:'',
-            
+}) 
 
   
-    const [userResult, setUserResult] = useState<User>(
-        {
-            id: 0,
-            nome: '',
-            usuario: '',
-            senha: '',
-            foto: '',
-            cpf: '',
-            endereco: '',
-            // token: '',
-
-        })
+    
   
     function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
         setConfirmarSenha(e.target.value)

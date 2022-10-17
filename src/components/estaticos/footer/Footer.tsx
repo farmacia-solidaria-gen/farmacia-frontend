@@ -99,3 +99,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
             {footerComponent}
         </>
     )
+    
+    }
+
+    export default Footer;

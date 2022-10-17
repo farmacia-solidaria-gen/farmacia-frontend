@@ -1,49 +1,8 @@
-
-import React, { useState, useEffect, ChangeEvent } from "react";
-import { Grid, Typography, TextField, Button } from "@material-ui/core";
-import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
-import { Box } from "@mui/material";
-import { login } from "../../service/Service";
-import { useDispatch } from "react-redux";
-import { addId, addToken } from "../../store/tokens/actions";
-import { toast } from "react-toastify";
-import UserLogin from "../../models/UserLogin";
-
-function Login() {
-
-
-  let navigate = useNavigate();
-  const dispatch = useDispatch();
-  const [token, setToken] = useState('');
-
-
-  const [userLogin, setUserLogin] = useState<UserLogin>({
-    id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    cpf: "",
-    endereco: "",
-    token: "",
-  });
-
-  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
-    id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    cpf: "",
-    endereco: "",
-    token: "",
-  });
-
-  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-
- function Login() {
-
+import React, { useState, useEffect, ChangeEvent } from 'react';
+import { Grid, Box, Typography, TextField, Button } from '@mui/material';
+import { Link, useNavigate} from 'react-router-dom';
+import { login } from '../../service/Service';
+import UserLogin from '../../models/UserLogin';
 import './Login.css';
 import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/tokens/actions';
@@ -51,39 +10,32 @@ import { toast } from 'react-toastify';
 
 function Login() {
     const dispatch = useDispatch();
-  
-
     let navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [token, setToken] = useState ('');
-  
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>(
-      {
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: '',
-        cpf: '',
-        endereco: '',
-        token: '',
-      }
-      )
-  
-      const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
-        id: 0,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: '',
-        cpf: '',
-        endereco: '',
-        token: '',
-      });
-  
-   
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            cpf: '',
+            endereco: '',
+            token: '',
+        }
+        );
 
-    return(
+        const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            cpf: '',
+            endereco: '',
+            token: '',
+        });
+
 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -131,7 +83,6 @@ function Login() {
         }
 
     return (
-
         <Grid container direction='row' justifyContent='center' alignItems='center'>
 
             <Grid alignItems='center' xs={6}>
@@ -218,4 +169,3 @@ function Login() {
 }
 
 export default Login;
-

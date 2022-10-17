@@ -38,13 +38,9 @@ function CadastroCategoria() {
             });
             navigate('/login')
 
-        if (token === "") {
-            alert("Você precisa estar logado")
-            navigate("/login")
-
-
-        }
-    }, [token]) 
+      
+    }
+}, [token]) ;
 
     useEffect(() => {
         if(id !== undefined) {

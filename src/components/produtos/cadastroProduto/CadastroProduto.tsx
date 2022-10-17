@@ -15,6 +15,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Categoria from '../../../models/Categoria';
 import Produto from '../../../models/Produto';
+import User from '../../../models/User';
 import { busca, buscaId, post, put, } from '../../../service/Service';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
@@ -30,7 +31,6 @@ function CadastroProduto() {
   );
 
 
-);
 useEffect(() => {
   if (token === "") {
       toast.error('Você precisa estar logado!', {
@@ -65,9 +65,7 @@ useEffect(() => {
     categoria: null,
     usuario: null 
   });
-  const userId = useSelector<TokenState, TokenState['id']>(
-    (state) => state.id
-)
+
 
   const userId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
@@ -75,7 +73,7 @@ useEffect(() => {
 
 
 
-  /*
+  
   const [usuario, setUsuario] = useState<User>({
     id: +userId,
     nome: '',
@@ -85,7 +83,7 @@ useEffect(() => {
     cpf: '',
     endereco: ''
   })
-  */
+  
 
   useEffect(() => {
     if (token === "") {
@@ -142,49 +140,70 @@ useEffect(() => {
     });
   }
 
-  async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
-    event.preventDefault();
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault()
 
     if (id !== undefined) {
-      put(`/produto`, produto, setProduto, {
-          headers: {
-              'Authorization': token
-          }
-      })
-      toast.success('Produto atualizado com sucesso!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: 'colored',
-          progress: undefined,
-      });
-    } else {
-      post(`/produto`, produto, setProduto, {
-          headers: {
-              'Authorization': token
-          }
-      })
-      toast.success('Produto cadastrado com sucesso!', {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: 'colored',
-          progress: undefined,
-      });
+        try{ 
+            await put(`/produto`, produto, setProduto, {
+            headers: {
+                'Authorization': token,
+            },
+        });
+        toast.success('Produto Atualizado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+    } catch (error) {
+        toast.error('Erro na atualização, verifique se os campos foram preenchidos corretamente', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
     }
-      back()
-  }
-
-  function back() {
-
+}else{
+    try{ 
+        await post(`/produto`, produto, setProduto, {
+            headers: {
+                'Authorization': token,
+            },
+        });
+        toast.success('Produto Cadastrado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+    } catch (error) {
+        toast.error('Erro ao cadastrar, verifique se os campos foram preenchidos corretamente', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+    }
+}
     navigate('/produtos')
-
+}
   
 
   return (
@@ -220,9 +239,3 @@ useEffect(() => {
 }
 
 export default CadastroProduto;
-
-
-// function updatedCategoria(event: React.ChangeEvent<HTMLInputElement>): void {
-//   throw new Error('Function not implemented.');
-// }
-

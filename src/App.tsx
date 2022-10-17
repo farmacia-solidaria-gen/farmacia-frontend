@@ -5,18 +5,21 @@ import Navbar from "./components/estaticos/navbar/Navbar";
 import Footer from "./components/estaticos/footer/Footer";
 import Home from "./paginas/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Login from "./paginas/login/Login";
 import CadastroUsuario from "./paginas/cadastroUsuario/CadastroUsuario";
 import ListaProduto from "./components/produtos/listaproduto/ListaProduto";
 import DeletarCategoria from "./components/categorias/deletarCategoria/DeletarCategoria";
 import DeletarProduto from "./components/produtos/deletarProduto/DeletarProduto";
 import CadastroCategoria from "./components/categorias/cadastroCategoria/CadastroCategoria";
 import ListaCategoria from "./components/categorias/listaCategoria/ListaCategoria";
-import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProduto";
 import store from "./store/store";
 import {ToastContainer} from 'react-toastify';
 import { Provider } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
+
+import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProduto";
+import Login from "./paginas/login/Login";
+
+
 
 
 function App() {
