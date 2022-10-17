@@ -1,4 +1,5 @@
 interface UserLogin{
+
     id: number,
     nome: string,
     usuario: string,
@@ -9,6 +10,7 @@ interface UserLogin{
     endereco:string
     
     
+
 
 }
 export default UserLogin;

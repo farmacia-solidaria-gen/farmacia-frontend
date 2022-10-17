@@ -20,13 +20,35 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function CadastroProduto() {
-  
+
   let navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
+
   );
+
+
+);
+useEffect(() => {
+  if (token === "") {
+      toast.error('Você precisa estar logado!', {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'dark',
+          progress: undefined,
+      });
+      navigate("/login")
+
+  }
+}, [token])
+
+
 
   const [categoria, setCategoria] = useState<Categoria>({
     id: 0,
@@ -41,12 +63,17 @@ function CadastroProduto() {
     quantidade: 0,
     preco: 0,
     categoria: null,
-    //usuario: null 
+    usuario: null 
   });
+  const userId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+)
 
   const userId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
   )
+
+
 
   /*
   const [usuario, setUsuario] = useState<User>({
@@ -80,7 +107,7 @@ function CadastroProduto() {
     setProduto({
       ...produto,
       categoria: categoria,
-      //usuario: usuario
+      usuario: usuario
     });
   }, [categoria]);
 
@@ -155,15 +182,19 @@ function CadastroProduto() {
   }
 
   function back() {
+
     navigate('/produtos')
-  }
+
+  
 
   return (
     <Container maxWidth="sm" className="topo">
         <form onSubmit={onSubmit}>
             <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro produto</Typography>
+
             <TextField value={produto.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
             <TextField value={produto.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descricao" name="descricao" variant="outlined" margin="normal" fullWidth />
+
 
             <FormControl >
                 <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
@@ -190,6 +221,8 @@ function CadastroProduto() {
 
 export default CadastroProduto;
 
+
 // function updatedCategoria(event: React.ChangeEvent<HTMLInputElement>): void {
 //   throw new Error('Function not implemented.');
 // }
+

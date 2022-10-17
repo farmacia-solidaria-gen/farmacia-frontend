@@ -9,7 +9,9 @@ import { TokenState } from '../../../store/tokens/tokensReducer';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
+
   function Footer() {
+
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
@@ -97,6 +99,3 @@ import InstagramIcon from '@material-ui/icons/Instagram';
             {footerComponent}
         </>
     )
-}
-
-export default Footer;

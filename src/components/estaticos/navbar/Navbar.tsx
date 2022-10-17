@@ -11,8 +11,11 @@ import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
 
 
+
+
 function Navbar() {
-    
+
+
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
@@ -38,13 +41,20 @@ function Navbar() {
     var navbarComponent;
 
     if(token != ''){
+
         navbarComponent = <AppBar position="static" className="cor-navbar">
+
+       
+
         <Toolbar variant="dense">
             <Box className='cursor'>
                 <Typography variant="h5" color="inherit">
                    Logo
                 </Typography>
             </Box>
+
+
+      
 
            <Grid container justifyContent="flex-end">
            <Box display="flex" justifyContent="flex-end">
@@ -87,7 +97,10 @@ function Navbar() {
                            <Button className='btn-logout' variant='contained'>logout</Button> 
                         </Typography>
                     </Box>
+
                     </Link>
+
+
             </Box>
            </Grid>
 
@@ -95,9 +108,11 @@ function Navbar() {
     </AppBar>
     }
 
+ 
   return (
-    <>
-      {navbarComponent}
+    <> 
+        {navbarComponent}
+
     </>
   );
 }

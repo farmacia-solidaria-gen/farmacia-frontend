@@ -11,4 +11,4 @@ interface Produto{
     categoria: Categoria| null;
     usuario?: User | null;
 }
-export default Produto;
+export default Produto; //Comentado por Pamela Maikon

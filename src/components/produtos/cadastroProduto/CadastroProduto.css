@@ -1,0 +1,9 @@
+.btn-lista-cadastro {
+    background: #BDC2C7 !important;
+    color: white !important;
+  }
+  
+  .btn-lista-cadastro:hover {
+    background: #4C4B4B !important;
+    color: white !important;
+  } 

@@ -24,6 +24,7 @@ function CadastroCategoria() {
     })
 
     useEffect(() => {
+
         if(token == '') {
             toast.error('Você precisa estar logado', {
                 position: 'top-right',
@@ -36,6 +37,12 @@ function CadastroCategoria() {
                 progress: undefined
             });
             navigate('/login')
+
+        if (token === "") {
+            alert("Você precisa estar logado")
+            navigate("/login")
+
+
         }
     }, [token]) 
 
