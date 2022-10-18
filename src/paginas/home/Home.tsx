@@ -35,36 +35,17 @@ function Home() {
 
   return (
     <>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        style={{ backgroundColor: "#D2FCF6" }}
-      >
+      <Grid container justifyContent="center" alignItems="center" style={{ backgroundColor: "#D2FCF6" }}>
         <Grid item xs={12} >
           <img src={logo} width={400} height={400} className="img-home" />
         </Grid>
         <Grid alignItems="center" item xs={12}>
           <Box paddingX={1}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              style={{ color: "black", fontWeight: "bold", fontSize: 50 }}
-              align="center"
-            >
+            <Typography className='titulo-home' variant="h3" gutterBottom color="textPrimary" component="h3" align="center">
               Seja Bem-Vinde a Farmácia Solidária!
             </Typography>
 
-            <Typography
-              variant="h5"
-              gutterBottom
-              color="textPrimary"
-              component="h5"
-              style={{ color: "black", fontWeight: "light", fontSize: 30 }}
-              align="center"
-            >
+            <Typography className='subtitulo-home' variant="h5" gutterBottom color="textPrimary" component="h5" align="center">
               Encontre aqui o que você procura
             </Typography>
           </Box>
@@ -86,25 +67,26 @@ function Home() {
       </Grid>
 
 
-     <Container>
-     <Grid container xs={12} style={{ backgroundColor: "#4d3efc", height: 500,}} className='box-sobre'>  
-            <Grid xs={6} style={{color: 'white', fontSize: 50, fontWeight: 'bold' }}>
-                Conheça o projeto
-                <Typography style={{color: 'white'}} className='margin-right'>
-                O projeto farmácia solidária tem o intuito de ajudar pessoas que necessitam de remédios de alto custo mas não possuem condições de obtê-los
-                </Typography>
-                <Link to='/sobre' style={{textDecoration: 'none'}}>
-                <Button className='btn-sobre'>
-                    Saiba mais
-                </Button>
-                </Link>
-            </Grid>
+    <Container>
+      <Grid container xs={12} style={{height: 400}} className='box-sobre'>  
+        <Grid xs={6} className='titulo-sobre'>
+          Conheça o projeto
+          <Typography style={{color: 'white'}} className='margin-right'>
+            A farmácia solidária tem o intuito de ajudar pessoas que necessitam de remédios de alto custo mas não possuem condições de obtê-los pelo sistema de saúde convencional
+          </Typography>
+          <Link to='/sobre' style={{textDecoration: 'none'}}>
+            <Button className='btn-sobre'>
+              Saiba mais
+            </Button>
+          </Link>
+        </Grid>
+        
         <Grid xs={6}>
-            <img className='img-sobre' src={doctors} alt="Imagem-sobre" />
+          <img className='img-sobre' src={doctors} alt="Imagem-sobre" />
         </Grid>
 
-    </Grid>
-     </Container>
+      </Grid>
+    </Container>
     </>
   );
 }

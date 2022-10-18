@@ -3,5 +3,21 @@
 } 
 
 .gap-social {
-  gap: 32px !important;
+  justify-content: center !important;
+  gap: 24px !important;
+}
+
+.siga-texto {
+  font-size: 22;
+  color: black;
+  font-family: 'Quicksand' !important;
+  font-weight: 700 !important
+}
+
+.direitos {
+  color: black !important;
+  font-family: 'Quicksand' !important;
+  font-weight: 500;
+  font-size: 12px !important;
+  margin-top: 12px !important;
 }
