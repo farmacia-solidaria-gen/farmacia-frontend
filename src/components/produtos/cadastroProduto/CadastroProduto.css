@@ -1,9 +1,25 @@
-.btn-lista-cadastro {
-    background: #BDC2C7 !important;
-    color: white !important;
+
+  .listaCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
   }
   
-  .btn-lista-cadastro:hover {
-    background: #4C4B4B !important;
-    color: white !important;
-  } 
+  .titleDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .productDescription {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .cardActions {
+    display: block !important;
+  }
