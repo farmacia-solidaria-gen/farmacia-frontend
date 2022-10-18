@@ -10,8 +10,6 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 
 
   function Footer() {
-
-
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
   );
@@ -34,10 +32,10 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
             justifyContent="center"
           >
             <Typography
+              className='siga-texto'
               variant="h5"
               align="center"
               gutterBottom
-              style={{fontSize: 22, color: 'black', fontWeight: 'bold'}}
             >
               Siga-nos nas redes sociais{' '}
             </Typography>
@@ -67,10 +65,10 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
         <Box style={{ backgroundColor: '#D2FCF6', height: '40px' }}>
           <Box paddingTop={1}>
             <Typography
+              className='direitos'
               variant="subtitle2"
               align="center"
               gutterBottom
-              style={{ color: 'black' }}
             >
               © Todos os direitos reservados: Farmácia Solidária
             </Typography>
