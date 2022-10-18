@@ -88,8 +88,7 @@ function Login() {
 
     return (
 
-
-        </Grid>
+<>
         <Grid xs={12} className='imagem-login' >
         <Box paddingX={50} className='box'>
         <div className="vidro">
@@ -107,8 +106,7 @@ function Login() {
                  
                 
               </Typography>
-              <TextField className='txt-style' 
-
+              <TextField className='txt-style inputBranco' 
                 value={userLogin.usuario}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                 id="usuario"
@@ -127,7 +125,7 @@ function Login() {
                   }}
                 
               />
-              <TextField className='txt-style'
+              <TextField className='txt-style inputBranco'
                 value={userLogin.senha}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                 id="senha"
@@ -170,7 +168,6 @@ function Login() {
           </div>
           </Box>
         </Grid>
-      </Grid>
     </>
 
       

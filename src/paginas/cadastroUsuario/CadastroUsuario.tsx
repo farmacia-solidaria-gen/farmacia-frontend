@@ -258,6 +258,7 @@ function CadastroUsuario() {
 
                         </Box>
                         
+                        <Box display='flex' justifyContent='space-around'>
                         <Box marginTop={5} textAlign='center'>
                             <Button type='submit' variant='contained' color='primary' className="btnCadastrar">
                                     Cadastrar
@@ -271,6 +272,7 @@ function CadastroUsuario() {
                                     Cancelar
                             </Button>
                             </Link>
+                        </Box>
                         </Box>
                     </form>
                 </Box>

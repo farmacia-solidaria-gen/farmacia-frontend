@@ -1,7 +1,8 @@
 .fundo{
     background-image: url("/src/assets/rainbow-vortex_1.png");
-    width: 100vh;
+    width: 100vw;
     background-size: cover;
+    min-height:100vh ;
 }
 
 .fundoForm{

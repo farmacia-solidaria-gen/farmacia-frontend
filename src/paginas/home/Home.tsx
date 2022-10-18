@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Typography, Box, Grid, Button } from "@mui/material";
+import { Typography, Box, Grid, Button, Container } from "@mui/material";
 import TabProduto from "../../components/produtos/tabproduto/TabProduto";
 import ModalProduto from "../../components/produtos/modalproduto/ModalProduto";
 import "./Home.css";
@@ -37,12 +37,11 @@ function Home() {
     <>
       <Grid
         container
-        direction="row"
         justifyContent="center"
         alignItems="center"
         style={{ backgroundColor: "#D2FCF6" }}
       >
-        <Grid item xs={12}>
+        <Grid item xs={12} >
           <img src={logo} width={400} height={400} className="img-home" />
         </Grid>
         <Grid alignItems="center" item xs={12}>
@@ -87,7 +86,8 @@ function Home() {
       </Grid>
 
 
-      <Grid container xs={12} style={{ backgroundColor: "#4d3efc", height: 500,}} className='box-sobre'>  
+     <Container>
+     <Grid container xs={12} style={{ backgroundColor: "#4d3efc", height: 500,}} className='box-sobre'>  
             <Grid xs={6} style={{color: 'white', fontSize: 50, fontWeight: 'bold' }}>
                 Conheça o projeto
                 <Typography style={{color: 'white'}} className='margin-right'>
@@ -104,6 +104,7 @@ function Home() {
         </Grid>
 
     </Grid>
+     </Container>
     </>
   );
 }

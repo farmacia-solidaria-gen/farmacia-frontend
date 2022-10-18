@@ -67,16 +67,6 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
-            <Link to="/equipe" className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography
-                  variant="h6"
-                  style={{ color: 'black', marginRight: 24 }}
-                >
-                  Equipe
-                </Typography>
-              </Box>
-            </Link>
             <Link to="/categorias" className="text-decorator-none">
               <Box mx={1} className="cursor">
                 <Typography
@@ -84,16 +74,6 @@ function Navbar() {
                   style={{ color: 'black', marginRight: 24 }}
                 >
                   Categorias
-                </Typography>
-              </Box>
-            </Link>
-            <Link to="/sobre" className="text-decorator-none">
-              <Box mx={1} className="cursor">
-                <Typography
-                  variant="h6"
-                  style={{ color: 'black', marginRight: 24 }}
-                >
-                  Sobre nós
                 </Typography>
               </Box>
             </Link>
@@ -107,18 +87,36 @@ function Navbar() {
                 </Typography>
               </Box>
             </Link>
+            <Link to="/equipe" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Equipe
+                </Typography>
+              </Box>
+            </Link>
+            <Link to="/sobre" className="text-decorator-none">
+              <Box mx={1} className="cursor">
+                <Typography
+                  variant="h6"
+                  style={{ color: 'black', marginRight: 24 }}
+                >
+                  Sobre nós
+                </Typography>
+              </Box>
+            </Link>
           </Box>
           
           <Box>
-          <Link to="/" className="text-decorator-none">
             <Box mx={1} className="cursor">
               <Typography variant="body2">
-                <Button className="btn-logout" variant="outlined">
+                <Button className="btn-logout" variant="outlined" onClick={goLogout}>
                   sair
                 </Button>
               </Typography>
             </Box>
-          </Link>
           </Box>
           </Grid>
         </Toolbar>

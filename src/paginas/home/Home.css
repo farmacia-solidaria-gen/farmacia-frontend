@@ -4,7 +4,7 @@
 
 .img-home {
     margin: 0 auto;
-    margin-left: 73vh;
+    display: block;
 }
 
 .padding {
@@ -25,6 +25,7 @@
 .btn-sobre {
     color: black !important;
     background-color: #30d1bc !important;
+    
 }
 
 .btn-postagem {
