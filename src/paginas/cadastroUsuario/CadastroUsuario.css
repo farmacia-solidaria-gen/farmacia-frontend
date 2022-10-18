@@ -1,21 +1,42 @@
-.imagem2{
-    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fjornal.usp.br%2Fciencias%2Flevantamento-aponta-os-desafios-da-enfermagem-no-brasil%2F&psig=AOvVaw0FptqpiRAdeDS9Wit3H3lW&ust=1665143663260000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPChidvFy_oCFQAAAAAdAAAAABAD);
-    background-repeat: no-repeat;
-    width: 80vh;
-    min-height: 80vh;
+.fundo{
+    background-image: url("/src/assets/rainbow-vortex_1.png");
+    width: 100vh;
     background-size: cover;
-    background-position: center;
+}
+
+.fundoForm{
+    background-color: rgb(29, 10, 51);
+    padding: 5rem;
+    margin: 5rem;
+    border-radius: 20px;
+}
+
+.forms{
+    color: white !important;
+}
+
+.loginho{
+    background-image: url('/src/assets/logo.png') !important;
 }
 
 .textos2{
     font-weight: bold !important;
 }
 
-.btnCancelar{
-    margin-right: 20px !important;
-    background-color: red !important;
+.btnCadastrar {
+    background: linear-gradient(90deg, #1FA2FF 0%, #12D8FA 50%, #A6FFCB 100%);
+    color: black !important;
 }
 
-.btnCadastrar {
-    background-color: rgb(0, 174, 255) !important;
+.btnCancelar {
+    background-color: rgb(253, 25, 112) !important;
+    color: black !important;
 }
+
+.MuiInput-underline::before {
+    border-bottom: 1px solid #CCCCCC !important;
+  }
+  
+  .MuiInputLabel-root {
+    color: #CCCCCC !important;
+  }
