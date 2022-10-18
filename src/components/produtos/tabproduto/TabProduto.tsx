@@ -16,12 +16,12 @@ function TabProduto() {
   return (
     <>
       <TabContext value={value} >
-        <AppBar position="static" className="header-container">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange}>
+        
+          <Tabs centered indicatorColor="secondary" onChange={handleChange} className='cor-tabprodutos'>
             <Tab label="Todos os produtos" value="1"/>
             <Tab label="Sobre nós" value="2" />
           </Tabs>
-        </AppBar>
+      
 
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">

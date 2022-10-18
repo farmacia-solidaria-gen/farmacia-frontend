@@ -87,15 +87,7 @@ function Login() {
         }
 
     return (
-        <>
-      <Grid className='bg-login'
-        container
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid xs={6} alignItems="center" >
-          
+
 
         </Grid>
         <Grid xs={12} className='imagem-login' >

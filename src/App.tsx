@@ -15,7 +15,6 @@ import store from "./store/store";
 import {ToastContainer} from 'react-toastify';
 import { Provider } from "react-redux";
 import 'react-toastify/dist/ReactToastify.css';
-
 import CadastroProduto from "./components/produtos/cadastroProduto/CadastroProduto";
 import Login from "./paginas/login/Login";
 

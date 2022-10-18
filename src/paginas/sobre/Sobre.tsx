@@ -31,7 +31,9 @@ if (token == "") {
 function Sobre() {
     return (
       <> 
-      
+        
       </>
     );
 }
+
+export default Sobre;

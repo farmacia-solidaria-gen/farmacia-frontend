@@ -1,3 +1,7 @@
 .cor {
   background-color: azure !important;
 } 
+
+.gap-social {
+  gap: 32px !important;
+}

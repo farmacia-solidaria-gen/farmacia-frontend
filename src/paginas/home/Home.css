@@ -1,3 +1,46 @@
 .text{
     text-decoration: none
 }
+
+.img-home {
+    margin: 0 auto;
+    margin-left: 73vh;
+}
+
+.padding {
+    padding-bottom: 40px !important;
+    padding-top: 40px !important;
+}
+
+.box-sobre {
+    border-radius: 15px 15px 10px 10px !important;
+    -webkit-border-radius: 24px 24px 10px 10px !important;
+    -moz-border-radius: 15px 15px 10px 10px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-flow: row;
+    padding-left: 10rem;
+}
+
+.btn-sobre {
+    color: black !important;
+    background-color: #30d1bc !important;
+}
+
+.btn-postagem {
+    color: #4d3efc !important;
+    border: 1px solid #4d3efc;
+}
+
+.btn-postagem:hover {
+    background-color: #4d3efc !important;
+    color: white !important;
+}
+
+.margin-right {
+    margin-right: 40px !important;
+}
+
+.img-sobre {
+    margin-right: 80px !important;
+}
