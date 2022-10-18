@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { Grid, Box, Typography, TextField, Button } from '@mui/material';
+import { Grid, Box, Typography, TextField, Button, InputAdornment } from '@mui/material';
 import { Link, useNavigate} from 'react-router-dom';
 import { login } from '../../service/Service';
 import UserLogin from '../../models/UserLogin';
@@ -7,6 +7,10 @@ import './Login.css';
 import { useDispatch } from 'react-redux';
 import { addId, addToken } from '../../store/tokens/actions';
 import { toast } from 'react-toastify';
+import logoFarm from '../../img/logo.svg';
+import { AccountCircle } from '@mui/icons-material';
+import { pink } from '@material-ui/core/colors';
+import LockSharpIcon from '@mui/icons-material/LockSharp'
 
 function Login() {
     const dispatch = useDispatch();
@@ -83,88 +87,93 @@ function Login() {
         }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center' className='bg-l'>
-
-            <Grid alignItems='center' xs={6}>
-
-                <Box paddingX={20}>
-
-                    <form onSubmit={onSubmit}>
-
-                        <Typography 
-                        className='textos1'
-                        variant='h3' 
-                        gutterBottom 
-                        color='textPrimary' 
-                        component='h3' 
-                        align='center'>Entrar
-                        </Typography>
 
 
-                        <TextField 
-                        className='bg-Form'
-                        value={userLogin.usuario} 
-                        onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
-                        id='usuario' 
-                        label='Usuário' 
-                        variant='outlined' 
-                        name='usuario' 
-                        margin='normal' 
-                        fullWidth />
+        </Grid>
+        <Grid xs={12} className='imagem-login' >
+        <Box paddingX={50} className='box'>
+        <div className="vidro">
+            <form onSubmit={onSubmit} className= "form">
+              <Typography
+                variant="h3"
+                gutterBottom
+                color="textPrimary"
+                component="h3"
+                align="center"
+                className='textos' 
+                
+              >
+                 <img src={logoFarm} alt=""  />
+                 
+                
+              </Typography>
+              <TextField className='txt-style' 
 
+                value={userLogin.usuario}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
+                id="usuario"
+                label="Usuário"
+                placeholder="Entre com seu usuário"
+                name="usuario"
+                margin="normal"
+                fullWidth
+                variant="standard"
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <AccountCircle sx={{ color: pink[500] }}/>
+                      </InputAdornment>
+                    ),
+                  }}
+                
+              />
+              <TextField className='txt-style'
+                value={userLogin.senha}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
+                id="senha"
+                label="Senha"
+                variant="standard"
+                name="senha"
+                margin="normal"
+                type="password"
+                placeholder="Entre com sua senha"
+                fullWidth
+                InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <LockSharpIcon sx={{ color: pink[500] }}/>
+                      </InputAdornment>
+                    ),
+                  }}
+              />
+                <Box marginTop={2} textAlign='center'>
+                                      
+                    <Button type='submit' variant='contained' className="btn-login" >
+                        Logar
+                    </Button>
 
-                        <TextField 
-                        value={userLogin.senha} 
-                        onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
-                        id='senha' 
-                        label='Senha' 
-                        variant='outlined' 
-                        name='senha' 
-                        margin='normal' 
-                        type='password'
-                        fullWidth />
-
-
-                        <Box marginTop={2} textAlign='center'>
-                                <Button type='submit' variant='outlined'>
-                                    Logar
-                                </Button>
-                        </Box>
-
-                    </form>
-
-
-                    <Box display='flex' justifyContent='center' marginTop={2}>
-
-                        <Box marginRight={1}>
-                            <Typography 
-                            variant='subtitle1' 
-                            gutterBottom 
-                            align='center'>Ainda não tem uma conta?
-                            </Typography>
-                        </Box>
-
-
-                        <Link to='/cadastroUsuario'>
-                            <Typography 
-                            className='textos1'
-                            variant='subtitle1' 
-                            gutterBottom 
-                            align='center'>Cadastre-se
-                            </Typography>
-                        </Link>
-                            
-                    </Box>
-                    
                 </Box>
-            
-            </Grid>
-
-        <Grid xs={6} className='imagem'>
-
+                <Box display='flex' justifyContent='center' marginTop={2}>
+              <Box marginRight={1}>
+                <Typography variant='subtitle1' gutterBottom align='center' className='bold'>
+                  Não tem uma conta?
+                </Typography>
+              </Box>
+              <Link to='/cadastrousuario'  className='textos'>
+                  <Typography variant='subtitle1' gutterBottom align='center' className='bold'>
+                      Cadastre-se
+                  </Typography>
+              </Link>
+            </Box>
+            </form>
+           
+          </div>
+          </Box>
         </Grid>
+      </Grid>
+    </>
 
-        </Grid>
+      
     );
 }
 
