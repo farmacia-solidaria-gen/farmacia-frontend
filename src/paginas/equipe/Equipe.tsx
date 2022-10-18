@@ -16,48 +16,31 @@ function Equipe() {
   return (
     <>
       <Grid container>
-        <Grid
-          xs={12}
-          style={{ justifyContent: "center", display: "flex" }}
-          className="margin-titulo-equipe"
-        >
-          <Typography style={{ fontSize: 50, fontWeight: "bold" }}>
+        <Grid xs={12} style={{ justifyContent: "center", display: "flex" }} className="margin-titulo-equipe">
+          <Typography className='titulo-equipe'>
             Equipe
           </Typography>
         </Grid>
 
         <Grid item xs={12}>
           <Box style={{ display: "flex", justifyContent: "center" }}>
-            <Typography
-              variant="h5"
-              className="txt-equipe"
-              gutterBottom
-              color="textPrimary"
-              component="h5"
-              style={{
-                color: "black",
-                fontWeight: "light",
-                fontSize: 22,
-                marginTop: 20,
-              }}
-              align="center"
-            >
+            <Typography variant="h5" className="txt-equipe" gutterBottom color="textPrimary" component="h5" align="center">
               Conheça a equipe de desenvolvedores que tornaram esse projeto possível:
             </Typography>
           </Box>
-          <Grid xs={8} style={{ justifyContent: "center", display: "flex"}} className='margin-equipe'>
-            <Box className="margin-foto">
-              <Typography className='nome-integrante'>Andrei</Typography>
-              <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" />
+        </Grid>
+
+        <Grid xs={12} style={{ justifyContent: "center", display: "flex"}} className='linha-1-equipe'>
+          <Box className="margin-foto">
+            <Typography className='nome-integrante'>Andrei</Typography>
+            <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" />
               <Box style={{ display: "flex" }}>
                 <a href="https://github.com/andrei-nascimento" target="_blank">
                   <GitHub className='posicionamento-icon' style={{ fontSize: 30, color: "black" }} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/andrei-lima-nascimento/"
-                  target="_blank"
-                >
-                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+                  href="https://www.linkedin.com/in/andrei-lima-nascimento/" target="_blank">
+                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color:"black" }} />
                 </a>
               </Box>
             </Box>
@@ -72,7 +55,7 @@ function Equipe() {
                   href="https://www.linkedin.com/in/gabriel-nascimento-4a7aa9116/"
                   target="_blank"
                 >
-                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
                 </a>
               </Box>
             </Box>
@@ -87,12 +70,13 @@ function Equipe() {
                   href="https://www.linkedin.com/in/leticiadearaujo0305/"
                   target="_blank"
                 >
-                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+                  <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
                 </a>
               </Box>
             </Box>
           </Grid>
-        </Grid>
+
+
         <Grid xs={8} style={{ justifyContent: "center", display: "flex" }} className='margin-equipe'>
         <Box className="margin-foto">
           <Typography className='nome-integrante'>Maikon</Typography>
@@ -105,7 +89,7 @@ function Equipe() {
               href="https://www.linkedin.com/in/maikon-santos-2bb1a823a/"
               target="_blank"
             >
-              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
             </a>
           </Box>
         </Box>
@@ -120,7 +104,7 @@ function Equipe() {
               href="https://www.linkedin.com/in/pamela-lima-s/"
               target="_blank"
             >
-              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
             </a>
           </Box>
         </Box>
@@ -135,7 +119,7 @@ function Equipe() {
               href="https://www.linkedin.com/in/veronica-pupo/"
               target="_blank"
             >
-              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
             </a>
           </Box>
         </Box>
@@ -153,7 +137,7 @@ function Equipe() {
               href="https://www.linkedin.com/in/wessslima/"
               target="_blank"
             >
-              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 30, color: "black" }} />
+              <LinkedIn className='posicionamento-icon-linkedin' style={{ fontSize: 32, color: "black" }} />
             </a>
           </Box>
         </Box>
