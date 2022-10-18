@@ -1,7 +1,17 @@
+.titulo-equipe {
+  font-family: 'Quicksand' !important;
+  font-weight: 700 !important;
+  font-size: 48px !important
+}
+
 .txt-equipe {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
+  font-family: 'Quicksand' !important;
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  margin-bottom: 48px !important
 }
 
 .margin-titulo-equipe {
@@ -17,17 +27,19 @@
 .nome-integrante {
   margin-left: 135px !important;
   margin-bottom: 24px !important;
+  font-family: 'Quicksand' !important;
+  font-weight: 700 !important;
+  font-size: 24px !important
 }
 
 .margin-equipe {
   margin: 0 auto !important;
   margin-top: 24px !important;
-  margin-bottom: 24px !important;
   margin-right: 300px !important;
 }
 
-.margin-foto {
-  margin-bottom: 24px !important;
+.margin-foto { 
+  margin-bottom: 32px !important;
 }
 
 .posicionamento-icon {
