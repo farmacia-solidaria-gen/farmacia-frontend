@@ -87,11 +87,10 @@ function Login() {
         }
 
     return (
-
-<>
+      <>
         <Grid xs={12} className='imagem-login' >
         <Box paddingX={50} className='box'>
-        <div className="vidro">
+          <div className="vidro">
             <form onSubmit={onSubmit} className= "form">
               <Typography
                 variant="h3"
@@ -99,14 +98,13 @@ function Login() {
                 color="textPrimary"
                 component="h3"
                 align="center"
-                className='textos' 
+                className='logo' 
                 
               >
-                 <img src={logoFarm} alt=""  />
-                 
+                <img src={logoFarm} alt="logo" className='loguinho'  />
                 
               </Typography>
-              <TextField className='txt-style inputBranco' 
+              <TextField className='txt-style' 
                 value={userLogin.usuario}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                 id="usuario"
@@ -119,13 +117,13 @@ function Login() {
                 InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <AccountCircle sx={{ color: pink[500] }}/>
+                        <AccountCircle className='perfil'/>
                       </InputAdornment>
                     ),
                   }}
                 
               />
-              <TextField className='txt-style inputBranco'
+              <TextField className='txt-style'
                 value={userLogin.senha}
                 onChange={(event: ChangeEvent<HTMLInputElement>) => updatedModel(event)}
                 id="senha"
@@ -139,39 +137,35 @@ function Login() {
                 InputProps={{
                     startAdornment: (
                       <InputAdornment position="start">
-                        <LockSharpIcon sx={{ color: pink[500] }}/>
+                        <LockSharpIcon className='cadeado'/>
                       </InputAdornment>
                     ),
                   }}
               />
                 <Box marginTop={2} textAlign='center'>
-                                      
                     <Button type='submit' variant='contained' className="btn-login" >
-                        Logar
+                      Logar
                     </Button>
-
                 </Box>
-                <Box display='flex' justifyContent='center' marginTop={2}>
-              <Box marginRight={1}>
-                <Typography variant='subtitle1' gutterBottom align='center' className='bold'>
-                  Não tem uma conta?
-                </Typography>
-              </Box>
-              <Link to='/cadastrousuario'  className='textos'>
-                  <Typography variant='subtitle1' gutterBottom align='center' className='bold'>
-                      Cadastre-se
+
+              <Box justifyContent='center' marginTop={3}>
+                <Box marginRight={1}>
+                  <Typography variant='subtitle1' gutterBottom align='center' className='sem-conta'>
+                    Não tem uma conta?
                   </Typography>
-              </Link>
-            </Box>
+                </Box>
+                <Link to='/cadastrousuario' className='textos'>
+                  <Typography variant='subtitle1' gutterBottom align='center' className='cadastrar'>
+                    Cadastre-se
+                  </Typography>
+                </Link>
+              </Box>
             </form>
-           
           </div>
           </Box>
         </Grid>
     </>
-
-      
-    );
+  );
 }
 
 export default Login;
