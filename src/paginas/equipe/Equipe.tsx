@@ -30,7 +30,7 @@ function Equipe() {
           </Box>
         </Grid>
 
-        <Grid xs={12} style={{ justifyContent: "center", display: "flex"}} className='linha-1-equipe'>
+        <Grid xs={12} style={{ justifyContent: "center", display: "flex", gap: '200px'}} className='margin-equipe'>
           <Box className="margin-foto">
             <Typography className='nome-integrante'>Andrei</Typography>
             <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" />
@@ -44,9 +44,9 @@ function Equipe() {
                 </a>
               </Box>
             </Box>
-            <Box>
+            <Box className="margin-foto">
               <Typography className='nome-integrante'>Gabriel</Typography>
-              <Avatar alt="Gabriel" src={gabriel} className="tamanho-avatar" />
+              <Avatar alt="Gabriel" src={gabriel} className="tamanho-avatar"/>
               <Box style={{ display: "flex" }}>
                 <a href="https://github.com/Gabrielrn" target="_blank">
                   <GitHub className='posicionamento-icon' style={{ fontSize: 30, color: "black" }} />
@@ -59,7 +59,7 @@ function Equipe() {
                 </a>
               </Box>
             </Box>
-            <Box>
+            <Box className="margin-foto">
               <Typography className='nome-integrante'>Letícia</Typography>
               <Avatar alt="Letícia" src={leticia} className="tamanho-avatar" />
               <Box style={{ display: "flex" }}>
@@ -75,9 +75,7 @@ function Equipe() {
               </Box>
             </Box>
           </Grid>
-
-
-        <Grid xs={8} style={{ justifyContent: "center", display: "flex" }} className='margin-equipe'>
+          <Grid xs={8} style={{ justifyContent: "center", display: "flex", gap: '200px' }} className='margin-equipe'>
         <Box className="margin-foto">
           <Typography className='nome-integrante'>Maikon</Typography>
           <Avatar alt="Maikon" src={maikon} className="tamanho-avatar" />
@@ -93,7 +91,7 @@ function Equipe() {
             </a>
           </Box>
         </Box>
-        <Box>
+        <Box className="margin-foto"> 
           <Typography className='nome-integrante'>Pamela</Typography>
           <Avatar alt="Pamela" src={pamela} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
@@ -108,7 +106,7 @@ function Equipe() {
             </a>
           </Box>
         </Box>
-        <Box>
+        <Box className="margin-foto">
           <Typography className='nome-integrante'>Verônica</Typography>
           <Avatar alt="Verônica" src={veronica} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
@@ -126,7 +124,7 @@ function Equipe() {
         </Grid>
       </Grid>
       <Grid xs={8} style={{ justifyContent: "center", display: "flex" }} className='margin-equipe'>
-      <Box>
+      <Box className="margin-foto">
           <Typography className='nome-integrante'>Wesley</Typography>
           <Avatar alt="Wesley" src={wesley} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
@@ -142,6 +140,7 @@ function Equipe() {
           </Box>
         </Box>
       </Grid>
+      
     </>
   );
 }
