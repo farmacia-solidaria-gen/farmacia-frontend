@@ -21,7 +21,7 @@ function Equipe() {
           style={{ justifyContent: "center", display: "flex" }}
           className="margin-titulo-equipe"
         >
-          <Typography style={{ fontSize: 50, fontWeight: "bold" }}>
+          <Typography className='titulo-equipe'>
             Equipe
           </Typography>
         </Grid>
