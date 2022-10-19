@@ -28,12 +28,11 @@ function Equipe() {
               Conheça a equipe de desenvolvedores que tornaram esse projeto possível:
             </Typography>
           </Box>
-        </Grid>
 
-        <Grid xs={12} style={{ justifyContent: "center", display: "flex"}} className='linha-1-equipe'>
-          <Box className="margin-foto">
-            <Typography className='nome-integrante'>Andrei</Typography>
-            <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" />
+          <Grid xs={8} style={{ justifyContent: "center", display: "flex"}} className='margin-equipe'>
+            <Box className="margin-foto">
+              <Typography className='nome-integrante'>Andrei</Typography>
+              <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" /> 
               <Box style={{ display: "flex" }}>
                 <a href="https://github.com/andrei-nascimento" target="_blank">
                   <GitHub className='posicionamento-icon' style={{ fontSize: 30, color: "black" }} />
