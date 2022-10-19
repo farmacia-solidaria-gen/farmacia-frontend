@@ -61,7 +61,7 @@ function Equipe() {
                 </a>
               </Box>
             </Box>
-            <Box>
+            <Box className="margin-foto">
               <Typography className='nome-integrante'>Gabriel</Typography>
               <Avatar alt="Gabriel" src={gabriel} className="tamanho-avatar" />
               <Box style={{ display: "flex" }}>
@@ -76,7 +76,7 @@ function Equipe() {
                 </a>
               </Box>
             </Box>
-            <Box>
+            <Box className="margin-foto">
               <Typography className='nome-integrante'>Letícia</Typography>
               <Avatar alt="Letícia" src={leticia} className="tamanho-avatar" />
               <Box style={{ display: "flex" }}>
@@ -109,7 +109,7 @@ function Equipe() {
             </a>
           </Box>
         </Box>
-        <Box>
+        <Box className="margin-foto">
           <Typography className='nome-integrante'>Pamela</Typography>
           <Avatar alt="Pamela" src={pamela} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
@@ -124,7 +124,7 @@ function Equipe() {
             </a>
           </Box>
         </Box>
-        <Box>
+        <Box className="margin-foto">
           <Typography className='nome-integrante'>Verônica</Typography>
           <Avatar alt="Verônica" src={veronica} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
@@ -142,7 +142,7 @@ function Equipe() {
         </Grid>
       </Grid>
       <Grid xs={8} style={{ justifyContent: "center", display: "flex" }} className='margin-equipe'>
-      <Box>
+      <Box className="margin-foto">
           <Typography className='nome-integrante'>Wesley</Typography>
           <Avatar alt="Wesley" src={wesley} className="tamanho-avatar" />
           <Box style={{ display: "flex" }}>
