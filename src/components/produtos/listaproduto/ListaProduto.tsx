@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { CardActionArea, CardMedia, makeStyles, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { makeStyles, Card, CardActions, CardContent, Button, Typography, Grid, InputAdornment } from '@material-ui/core';
 import './ListaProduto.css';
-import { Box } from '@mui/material';
+import { Box, CardActionArea, CardMedia } from '@mui/material';
 import Produto from '../../../models/Produto';
 import { busca } from '../../../service/Service';
 import { toast } from 'react-toastify';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import './ListaProduto.css'
-
 
 const useStyles = makeStyles({
   root: {
@@ -61,46 +60,77 @@ function ListaProduto() {
   useEffect(() => {
     getProduto()
   }, [produtos.length])
+
+
     
-  return (
-    
-    <div className="listaCards">
-      {produtos.map((produto) => (
-        <Card className={classes.root} key={produto.id}>
-            <CardActionArea>
-            <Link to={`/produto/${produto.id}`} className='text-decorator-none' >
-              <CardMedia
-                className={classes.media}
-                image={produto.fabricante}
-                title={produto.nome}
-              />
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="h2" className='titleDescription'>
-                  {produto.nome}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  className="productDescription"
-                >
-                  {produto.descricao}
-                </Typography>
-              </CardContent>
-              </Link>
-            </CardActionArea>
-            <CardActions className='cardActions'>
-              <Link to={`/produto/${produto.id}`} className='text-decorator-none'>
-                <Button size="small" color="primary" variant="contained" fullWidth>
-                  Ver mais
-                </Button>
-              </Link>
-            </CardActions>
-          </Card>
-        
-      ))}
-    </div>
-  );
-}
+ 
+    return (
+      <>
+      <Grid className='container-produto'>
+        {
+          produtos.map(produto => (
+            <Box className='container2'>
+              <Card className="tamanho">
+                <CardActionArea>
+               
+                  <CardContent>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={produto.fabricante}
+
+                    //className={classes.media}
+                    
+                     />
+                  
+                    <Box className='box-produto' borderBottom={2}>
+                    <Typography variant="body2" component="p" className='titulo-card-produto'>
+                      {produto.nome}
+                    </Typography>
+                    
+                    <Typography variant="body2" component="p">
+                      {produto.descricao}
+                    </Typography>
+                    <Typography variant="body2" component="p" className='preco-produto'>
+                      R${produto.preco}
+                    </Typography>
+                    </Box>
+                    <Typography variant="body2" component="p" className='categoria-produto'>
+                      Categoria: {produto.categoria?.tipo}
+                    </Typography>
+                    <Typography variant="body2" component="p" className='categoria-produto'>
+                      Quantidade: {produto.quantidade}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+
+                <CardContent className='botoes'>
+                  <Box display="flex" justifyContent="center" mb={1.5}>
+
+                    <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
+                      <Box mx={1}>
+                        <Button variant="contained" className="botao-atualizar" size='small' color="primary" >
+                        comprar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
+                      <Box mx={1}>
+                        <Button variant="contained" className="botao-deletar" size='small' color="secondary">
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                  </Box>
+                </CardContent>
+
+              </Card>
+            </Box >
+          ))
+        }
+      </Grid>
+    </>
+  )
+} 
 
 export default ListaProduto;
