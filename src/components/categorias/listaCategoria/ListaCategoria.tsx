@@ -53,8 +53,10 @@ function ListaCategoria() {
         <>
             
             {categorias.map(categoria => (
+
                 <Box m={2} className="largura" >
                     <Card variant="outlined" >
+
                         <CardContent>
                             <Typography color="textSecondary" gutterBottom>Categoria</Typography>
                             <Typography variant="h5" component="h2">{categoria.tipo}</Typography>

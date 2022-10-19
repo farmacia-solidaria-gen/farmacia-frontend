@@ -58,7 +58,6 @@
 .botao-atualizar {
   background-color: #30d1bc !important;
   font-weight: bold !important;
-
 }
 
 .botao-deletar {
@@ -70,4 +69,5 @@
   height: 10vh;
   display: flex;
   justify-content: center;
+  
 }
