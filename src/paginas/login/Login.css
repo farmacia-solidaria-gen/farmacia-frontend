@@ -1,115 +1,128 @@
-.textos {
-  font-weight: bold !important;
-  
+.logo {
+  margin-bottom: 12px !important;
+}
+
+.loguinho {
+  height: 160px;
+  width: 160px
 }
 
 .text-decorator-none {
   text-decoration: none;
-}
-.cor-de-fundo{
-  
 }
 
 .textos {
   text-decoration: none !important;
 }
 
-.bold {
-  font-weight: bold !important;
-  color: rgb(236, 229, 229) !important;
+.sem-conta {
+  font-family: 'Quicksand' !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  color: white !important;
+  justify-content: center !important
+}
+
+.cadastrar {
+  font-family: 'Quicksand' !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  color: white !important;
+  justify-content: center !important
 }
 
 .bold:hover {
   text-decoration: underline;
 }
 
-.logoFarm{
-  background-image: url('/public/imagemdefundo.jpeg');
-  width: 50px;
-  height: 50px;
-
-}
 .MuiInput-underline::before {
   border-bottom: 1px solid white !important;
 }
 
-.inputBranco input {
-  color: white !important
+.cadeado {
+  justify-content: center !important;
+  align-items: center !important;
+  color: #30d1bc !important;
+}
+
+.perfil {
+  justify-content: center !important;
+  align-items: center !important;
+  color: #30d1bc !important;
+}
+
+#usuario {
+  color: white;
+}
+
+#senha {
+  color: white;
+}
+
+.txt-style {
+  color: white !important;
+  font-family: 'Quicksand' !important;
+  width: 280px !important;
 }
 
 .imagem-login {
-    
-    /* background-image:  repeating-radial-gradient(circle at 0 0, transparent 0, #E0FFFF 50px), repeating-linear-gradient(#87CEFA, #87CEFA);
-    background-color:#E0FFFF ; */
-    background-image: url('/public/imagemdefundo.jpeg');
-    background-repeat: no-repeat;
-    width: 100vw;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
+  background-image: url('/public/imagemdefundo.jpeg');
+  width: 100vw;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 .btn-login {
-    background: linear-gradient(45deg, rgba(31,162,255,1)80%,rgba(166,255,203,1)  100%) !important;
-    border: 0 !important;
-    border-radius: 3 !important;
-    color: rgb(0, 0, 0) !important;
-    height: 6vh !important;
-    padding: 0 30px !important;
-    font-weight: bold !important;
-    margin-top: 5rem !important;
-    
-    
+  background-color: #30d1bc !important;
+  color: #330461 !important;
+  padding: 4px 32px !important;
+  font-family: 'Quicksand' !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important
 }
-
-
 
 .text-decorator-none {
   text-decoration: none;
 }
 
 .txt-style {
- 
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  
 }
 
 .box {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .vidro {
-  /* From https://css.glass */
-background:#330461;
-border-radius: 16px;
-backdrop-filter: blur(2.8px); 
--webkit-backdrop-filter: blur(2.8px);
-border: 1px solid rgba(255, 255, 255, 0.3);
-padding: 1rem; 
-width: 60vh;
-height: 90vh;
-margin-top: 2rem !important;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-justify-content: center;
+  background:#330461;
+  border-radius: 16px;
+  padding: 1rem; 
+  width: 60vh;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
- ::placeholder {
-   color: white !important; 
- }
- .form{
-padding: 5rem;
+::placeholder {
+  color: white !important; 
+  font-size: 16px
+}
 
- }
- 
+.form{
+  padding: 3rem;
+}
 
 .botao {
   margin-top: 3vh;
   text-align: center;
+  justify-content: center;
 } 
