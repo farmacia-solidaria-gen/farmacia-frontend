@@ -50,7 +50,7 @@ Uma sociedade saudável é uma sociedade que cuida da mente e do corpo, resultan
 
                         
                     </p>
-                    <Typography variant="h4" gutterBottom color="textPrimary" component="h3" className='ods11' >ODS 03 - Saúde e Bem Estar</Typography>
+                    <Typography variant="h4" gutterBottom color="textPrimary" component="h3" className='quemSomos' > Saúde e Bem Estar</Typography>
                     <Box className='boxText'>
                         <p className='text2'>E-COMMERCE 
 E commerce onde a venda dos produtos seja revertida para custear os remédios das pessoas necessitadas.

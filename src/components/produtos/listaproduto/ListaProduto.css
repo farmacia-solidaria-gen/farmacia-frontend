@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 
-.box-descricao-produto {
+.box-produto {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -43,11 +43,11 @@
     font-size: 24px !important;
 }
 
-.texto-categoria-produto {
+.categoria-produto {
   margin-top: 10px !important;
 }
 
-.texto-preco-produto {
+.preco-produto {
   margin-top: 10px !important;
   color: green !important;
   font-size: 20px !important;
@@ -64,7 +64,7 @@
   font-weight: bold !important;
 } 
 
-.caixa-botao {
+.botoes {
   height: 10vh;
   display: flex;
   justify-content: center;

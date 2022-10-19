@@ -72,13 +72,18 @@ function ListaProduto() {
             <Box className='container2'>
               <Card className="tamanho">
                 <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
-                    image={produto.fabricante}
-                    title={produto.nome}
-                     />
+               
                   <CardContent>
-                    <Box className='box-descricao-produto' borderBottom={2}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={produto.fabricante}
+
+                    //className={classes.media}
+                    
+                     />
+                  
+                    <Box className='box-produto' borderBottom={2}>
                     <Typography variant="body2" component="p" className='titulo-card-produto'>
                       {produto.nome}
                     </Typography>
@@ -86,26 +91,26 @@ function ListaProduto() {
                     <Typography variant="body2" component="p">
                       {produto.descricao}
                     </Typography>
-                    <Typography variant="body2" component="p" className='texto-preco-produto'>
+                    <Typography variant="body2" component="p" className='preco-produto'>
                       R${produto.preco}
                     </Typography>
                     </Box>
-                    <Typography variant="body2" component="p" className='texto-categoria-produto'>
+                    <Typography variant="body2" component="p" className='categoria-produto'>
                       Categoria: {produto.categoria?.tipo}
                     </Typography>
-                    <Typography variant="body2" component="p" className='texto-categoria-produto'>
+                    <Typography variant="body2" component="p" className='categoria-produto'>
                       Quantidade: {produto.quantidade}
                     </Typography>
                   </CardContent>
                 </CardActionArea>
 
-                <CardContent className='caixa-botoes'>
+                <CardContent className='botoes'>
                   <Box display="flex" justifyContent="center" mb={1.5}>
 
                     <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                       <Box mx={1}>
                         <Button variant="contained" className="botao-atualizar" size='small' color="primary" >
-                          atualizar
+                        comprar
                         </Button>
                       </Box>
                     </Link>
