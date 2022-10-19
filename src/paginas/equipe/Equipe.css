@@ -22,11 +22,10 @@
 .tamanho-avatar {
   width: 180px !important;
   height: 180px !important;
-  margin-left: 70px !important;
 }
 
 .nome-integrante {
-  margin-left: 135px !important;
+  text-align: center !important;
   margin-bottom: 24px !important;
   font-family: 'Quicksand' !important;
   font-weight: 700 !important;
@@ -35,16 +34,18 @@
 
 .margin-equipe {
   margin: 0 auto !important;
-  margin-top: 24px !important;
-  margin-right: 300px !important;
+  justify-content: center !important;
+  display: flex !important;
 }
 
 .margin-foto { 
   margin-bottom: 32px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .posicionamento-icon {
-  margin-left: 118px !important;
   padding-top: 24px !important;
 }
 
