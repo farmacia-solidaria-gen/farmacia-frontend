@@ -213,8 +213,9 @@ useEffect(() => {
 
             <TextField value={produto.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
             <TextField value={produto.descricao} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="descricao" label="descricao" name="descricao" variant="outlined" margin="normal" fullWidth />
-
-
+            <TextField value={produto.fabricante} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="fabricante" label="fabricante" name="fabricante" variant="outlined" margin="normal" fullWidth />
+            <TextField value={produto.quantidade} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="quantidade" label="quantidade" name="quantidade" variant="outlined" margin="normal" fullWidth />
+            <TextField value={produto.preco} onChange={(event: ChangeEvent<HTMLInputElement>) => updatedProduto(event)} id="preco" label="preco" name="preco" variant="outlined" margin="normal" fullWidth />
             <FormControl >
                 <InputLabel id="demo-simple-select-helper-label">Categoria </InputLabel>
                 <Select labelId="demo-simple-select-helper-label" id="demo-simple-select-helper" onChange={(event: any) => buscaId(`/categoria/${event.target.value}`, setCategoria, {

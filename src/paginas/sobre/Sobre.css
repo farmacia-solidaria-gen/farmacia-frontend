@@ -1,57 +1,40 @@
-.Home{
-position: absolute;
-width: 1440px;
-height: 158px;
-left: 0px;
-top: 0px;
-
-background: #D9D9D9;
+ 
+.center{
+    text-align: center !important;
+    margin-left: 25vw !important;
+    margin-right: 25vw !important;
 }
-.QuemSomos {
-    position: absolute;
-    width: 430px;
-    height: 300px;
-    left: 281px;
-    top: 202px;
-    background: #7CABAE;
-    filter: blur(3px);
-    }
-    
-.Missao{
-    position: absolute;
-    width: 430px;
-    height: 300px;
-    left: 730px;
-    top: 202px;
-    background: #B7E1FF;
-    filter: blur(3px);
-    }
-    
-.Proposito{
-    position: absolute;
-    width: 430px;
-    height: 300px;
-    left: 281px;
-    top: 522px;
-    background: #B7E1FF;
-    filter: blur(3px);
-    }
-    
-    .Valores{
-    position: absolute;
-    width: 430px;
-    height: 300px;
-    left: 281px;
-    top: 522px;
-    background: #B7E1FF;
-    filter: blur(3px);
-    }
-.Equipe{
-position: absolute;
-width: 1442px;
-height: 158px;
-left: -2px;
-top: 1082px;
 
-background: #7CABAE;
+
+.quemSomos{
+    text-align: center;
+    color: #4d3efc !important;
+    font-family: Segoe UI !important;
+    margin-top: 17px !important;
+    margin-left: 16px !important;
+    font-size: 30px !important;
+    font-weight: bold !important;
+}
+
+.text-sobre {
+    text-align: justify;
+    margin-left: 0.5cm;
+    margin-top: 45px;
+    margin-bottom: 35px;
+    margin-right: 0.2cm;
+    color: black !important;
+    font-family: Segoe UI !important;
+    font-size: 20px;
+}
+
+
+.text2{
+    text-align: justify;
+    margin-left: 0.5cm;
+    margin-top: 30px;
+    margin-bottom: 20px !important;
+    margin-right: 0.5cm;
+    color: black !important;
+    font-family: Segoe UI !important;
+    font-size: 20px;
 }
