@@ -48,7 +48,7 @@ function Equipe() {
           <Grid xs={8} style={{ justifyContent: "center", display: "flex"}} className='margin-equipe'>
             <Box className="margin-foto">
               <Typography className='nome-integrante'>Andrei</Typography>
-              <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" />
+              <Avatar alt="Andrei" src={andrei} className="tamanho-avatar" /> 
               <Box style={{ display: "flex" }}>
                 <a href="https://github.com/andrei-nascimento" target="_blank">
                   <GitHub className='posicionamento-icon' style={{ fontSize: 30, color: "black" }} />
