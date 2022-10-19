@@ -10,6 +10,7 @@ import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
 import logo from '../../../img/logo.svg'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function Navbar() {
 
@@ -88,8 +89,16 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
+              <Link to="/carrinho" className="text-decorator-none">
+                <Box mx={1} className="cursor">
+                  <Typography className='principais' variant="h6">
+                    <ShoppingCartIcon/>
+                  </Typography>
+                </Box>
+              </Link>
             </Box>
-          
+            
+
             <Box>
               <Box mx={1} className="cursor">
                 <Typography variant="body2">
