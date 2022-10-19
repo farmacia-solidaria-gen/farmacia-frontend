@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import './Sobre.css';
 import { toast } from 'react-toastify';
-import { Box, Grid } from '@material-ui/core';
-import { Typography } from '@mui/material';
+import {  Grid } from '@material-ui/core';
+import { Box, Typography } from '@mui/material';
 import logo from "../../assets/logo.png";
 
 

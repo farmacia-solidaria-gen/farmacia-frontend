@@ -9,6 +9,8 @@ import { toast } from 'react-toastify';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import './ListaProduto.css'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { pink } from '@material-ui/core/colors';
 
 // const useStyles = makeStyles({
 //   root: {
@@ -114,7 +116,7 @@ function ListaProduto() {
                     <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                       <Box mx={1}>
                         <Button variant="contained" className="botao-atualizar" size='small' color="primary" >
-                        comprar
+                        Comprar 
                         </Button>
                       </Box>
                     </Link>
