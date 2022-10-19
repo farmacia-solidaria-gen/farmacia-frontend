@@ -24,3 +24,7 @@
 .gap-navbar {
   gap: 50px !important;
 }
+
+.carrinho {
+  height: 40px !important;
+}
