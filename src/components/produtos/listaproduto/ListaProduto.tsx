@@ -9,20 +9,22 @@ import { toast } from 'react-toastify';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 import { useSelector } from 'react-redux';
 import './ListaProduto.css'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { pink } from '@material-ui/core/colors';
 
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 350,
-    objectFit: 'contain',
-    width: 'auto',
-  },
-});
+// const useStyles = makeStyles({
+//   root: {
+//     maxWidth: 345,
+//   },
+//   media: {
+//     height: 350,
+//     objectFit: 'contain',
+//     width: 'auto',
+//   },
+// });
 
 function ListaProduto() {
-  const classes = useStyles();
+  // const classes = useStyles();
 
  
 
@@ -92,7 +94,11 @@ function ListaProduto() {
                       {produto.descricao}
                     </Typography>
                     <Typography variant="body2" component="p" className='preco-produto'>
-                      R${produto.preco}
+                      {new Intl.NumberFormat('pt-BR',{
+                        style: 'currency',
+                        currency: 'BRL',
+                      }).format(produto.preco)
+                     }
                     </Typography>
                     </Box>
                     <Typography variant="body2" component="p" className='categoria-produto'>
@@ -110,7 +116,7 @@ function ListaProduto() {
                     <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
                       <Box mx={1}>
                         <Button variant="contained" className="botao-atualizar" size='small' color="primary" >
-                        comprar
+                        Comprar 
                         </Button>
                       </Box>
                     </Link>

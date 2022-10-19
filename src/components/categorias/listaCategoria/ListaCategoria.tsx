@@ -6,19 +6,21 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import Categoria from '../../../models/Categoria';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import './ListaCategoria.css';
+
 
 function ListaCategoria() {
-    //trazer a função de navegação interna
+    
     let navigate = useNavigate();
 
-    // estado para gerenciar os temas que virão do backend
+    
     const [categorias, setCategorias] = useState<Categoria[]>([])
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
     );
 
-    //verificar se a pessoa tem token, se não tiver, mandar pra login
+    
     useEffect(() => {
         if(token === '') {
             toast.error('Você precisa estar logado', {
@@ -35,40 +37,43 @@ function ListaCategoria() {
         }
     }, [token])
 
-    //função que realmente vai até o backend para buscar os temas
+   
     async function getTemas() {
         await busca('/categoria', setCategorias, {
             headers: {'Authorization': token}
         })
     }
 
-    //função para disparar a busca de temas assim que a tela for carregada
+    
     useEffect(() => {
         getTemas()
     }, [categorias.length])
 
     return (
         <>
-            {/* mapeamento do array de temas, para recriar a estrutura inteira para cada tema existente */}
+            
             {categorias.map(categoria => (
-                <Box m={2} >
-                    <Card variant="outlined">
+
+                <Box m={2} className="largura" >
+                    <Card variant="outlined" >
+
                         <CardContent>
-                            <Typography color="textSecondary" gutterBottom>Tema</Typography>
+                            <Typography color="textSecondary" gutterBottom>Categoria</Typography>
                             <Typography variant="h5" component="h2">{categoria.tipo}</Typography>
                         </CardContent>
 
                         <CardActions>
                             <Box display="flex" justifyContent="center" mb={1.5} >
-                                <Link to={`/formularioTema/${categoria.id}`} className="text-decorator-none">
+                                <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
                                     <Box mx={1}>
-                                        <Button variant="contained" className="marginLeft" size='small' color="primary">atualizar</Button>
+                                        <Button variant="contained" className="marginLeft" size='small' color="primary">Atualizar </Button>
                                     </Box>
                                 </Link>
-                                <Link to={`/deletarTema/${categoria.id}`} className="text-decorator-none">
+                                <Link to={`/deletarCategoria/${categoria.id}`} className="text-decorator-none">
                                     <Box mx={1}>
                                         <Button variant="contained" size='small'
                                             color="secondary">deletar</Button>
+                                           
                                     </Box>
                                 </Link>
                             </Box>
@@ -81,3 +86,5 @@ function ListaCategoria() {
 }
 
 export default ListaCategoria;
+
+// import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';

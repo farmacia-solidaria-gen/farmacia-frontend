@@ -10,6 +10,8 @@
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  height: 350;
+  width: auto,
 }
 
 .container2 {
@@ -56,7 +58,6 @@
 .botao-atualizar {
   background-color: #30d1bc !important;
   font-weight: bold !important;
-
 }
 
 .botao-deletar {
@@ -68,4 +69,5 @@
   height: 10vh;
   display: flex;
   justify-content: center;
+  
 }
