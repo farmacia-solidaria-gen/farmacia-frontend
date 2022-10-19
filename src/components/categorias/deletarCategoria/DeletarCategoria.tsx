@@ -76,7 +76,7 @@ function DeletarCategoria() {
                 <CardContent>
                     <Box justifyContent="center">
                     <Typography color="textSecondary" gutterBottom>
-                        Deseja deletar o Tema:
+                        Deseja deletar a Categoria:
                     </Typography>
                     <Typography color="textSecondary">
                         {categoria?.tipo}
