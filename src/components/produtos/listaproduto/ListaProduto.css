@@ -10,6 +10,8 @@
   flex-wrap: wrap;
   align-content: center;
   align-items: center;
+  height: 350;
+  width: auto,
 }
 
 .container2 {
