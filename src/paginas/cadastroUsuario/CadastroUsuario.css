@@ -7,9 +7,22 @@
 
 .fundoForm{
     background-color: rgb(29, 10, 51);
-    padding: 5rem;
-    margin: 5rem;
-    border-radius: 20px;
+
+    padding: 4rem;
+    margin: 4rem 2rem;
+    border-radius: 16px;
+}
+
+.icon-color {
+    color: #30d1bc !important;
+}
+
+#nome, #usuario, #cpf, #endereco, #senha, #confirmarSenha {
+    color: white !important;
+}
+
+#foto {
+    color: white !important;
 }
 
 .forms{
@@ -25,19 +38,23 @@
 }
 
 .btnCadastrar {
-    background: linear-gradient(90deg, #1FA2FF 0%, #12D8FA 50%, #A6FFCB 100%);
+    font-family: 'Quicksand' !important;
+    font-weight: 700 !important;
+    background-color: #30d1bc !important;
     color: black !important;
 }
 
 .btnCancelar {
-    background-color: rgb(253, 25, 112) !important;
-    color: black !important;
+    font-family: 'Quicksand' !important;
+    font-weight: 700 !important;
+    background-color: red !important;
+    color: white !important;
 }
 
 .MuiInput-underline::before {
     border-bottom: 1px solid #CCCCCC !important;
-  }
-  
-  .MuiInputLabel-root {
+}
+
+.MuiInputLabel-root {
     color: #CCCCCC !important;
-  }
+}
