@@ -6,7 +6,8 @@ https://farmaciasolidaria.netlify.app
 
 ![farmahomepng](https://user-images.githubusercontent.com/113915415/196948189-7741f6ae-ac05-4889-b46d-eb5e260904ef.png)
 
-![telaprojeto](https://user-images.githubusercontent.com/113915415/196948260-ba628919-cee2-41e2-a860-069f8f24a599.png)
+![produtosfaro](https://user-images.githubusercontent.com/113915415/196949221-c789d47d-1e23-4564-874e-0e895048cd79.png)
+
 
 Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O usuário deve se cadastrar, para logar e ter acesso ao site, podendo fazer postagens dos seus produtos e incluir categorias sugeridas para futuros produtos.
 
