@@ -11,6 +11,7 @@ import { addToken } from "../../../store/tokens/actions";
 import { toast } from 'react-toastify';
 import logo from '../../../img/logo.svg'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 function Navbar() {
 
@@ -89,6 +90,15 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
+
+              <Link to='/perfil' className='text-decorator-none'>
+                <Box mx={1} className='cursor'>
+                    <Typography variant="h6" color="inherit" className='perfill-icon'>
+                        <AccountCircleIcon className="perfil-icon"/>
+                    </Typography>
+                </Box>
+            </Link>
+
               <Link to="/carrinho" className="text-decorator-none">
                 <Box mx={1} className="cursor">
                   <Typography className='principais' variant="h6">
