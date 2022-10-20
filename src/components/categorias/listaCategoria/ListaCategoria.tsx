@@ -64,7 +64,7 @@ function ListaCategoria() {
 
                         <CardActions>
                             <Box display="flex" justifyContent="center" mb={1.5} >
-                                <Link to={`/formularioCategoria/${categoria.id}`} className="text-decorator-none">
+                                <Link to={`/atualizarCategoria/${categoria.id}`} className="text-decorator-none">
                                     <Box mx={1}>
                                         <Button variant="contained" className="marginLeft" size='small' color="primary">Atualizar </Button>
                                     </Box>
