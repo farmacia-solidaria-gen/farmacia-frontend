@@ -120,11 +120,10 @@ function CadastroUsuario() {
                   required 
                   value={user.nome} 
                   onChange={(e: ChangeEvent<HTMLInputElement>)=> updatedModel(e)} 
-                  id='nome' 
+                  id='nome_cadastro' 
                   label='Nome' 
                   variant='standard' 
                   name='nome' 
-                  className='nominho'
                   margin='normal' 
                   InputProps={{
                   startAdornment: (
