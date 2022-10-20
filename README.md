@@ -2,6 +2,25 @@
 https://farmaciasolidaria.netlify.app
 
 
+![faramaciasoli](https://user-images.githubusercontent.com/113915415/196948142-d223377d-46a2-4c64-83fa-ae5b7ff94d57.png)
+
+![farmahomepng](https://user-images.githubusercontent.com/113915415/196948189-7741f6ae-ac05-4889-b46d-eb5e260904ef.png)
+
+![telaprojeto](https://user-images.githubusercontent.com/113915415/196948260-ba628919-cee2-41e2-a860-069f8f24a599.png)
+
+Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O usuário deve se cadastrar, para logar e ter acesso ao site, podendo fazer postagens dos seus produtos e incluir categorias sugeridas para futuros produtos.
+
+O site contém os componentes :
+
+Home
+Cadastro
+Login
+Navbar
+Footer
+Produtos - Cadastro de Produto
+Categoria - Cadastro de Categoria
+Perfil - Cadastro de Usuário
+
 
 # Getting Started with Create React App
 
