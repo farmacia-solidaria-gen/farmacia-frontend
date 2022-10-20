@@ -124,6 +124,7 @@ function CadastroUsuario() {
                   label='Nome' 
                   variant='standard' 
                   name='nome' 
+                  className='nominho'
                   margin='normal' 
                   InputProps={{
                   startAdornment: (
