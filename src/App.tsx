@@ -46,7 +46,7 @@ function App() {
           <Route path="/formularioProduto" element={<CadastroProduto />} />
           <Route path="/formularioProduto/:id" element={<CadastroProduto />} />
           <Route path="/formularioCategoria" element={<CadastroCategoria />} />
-          <Route path="/formularioCategoria/:id" element={<CadastroCategoria />} />
+          <Route path="/atualizarCategoria/:id" element={<CadastroCategoria />} />
           <Route path="/deletarProduto/:id" element={<DeletarProduto />} /> 
           <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
           <Route path="/sobre" element={<Sobre/>}/>
