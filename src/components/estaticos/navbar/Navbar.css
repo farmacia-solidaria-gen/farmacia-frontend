@@ -10,6 +10,17 @@
   margin-right: 24px !important;
 }
 
+.principais:hover {
+  font-family: 'Quicksand' !important;
+  font-weight: 700 !important;
+  font-size: 20px !important;
+  color: white !important;
+  margin-right: 24px !important;
+  background-color: #4d3efc !important;
+  border: solid 8px #4d3efc !important;
+  border-radius: 12px !important;
+}
+
 .btn-logout {
   border: 1px solid black !important;
   color: black !important;
@@ -25,10 +36,24 @@
   gap: 50px !important;
 }
 
-.carrinho {
+/* .carrinho {
   height: 40px !important;
+} */
+
+.carrinho-logo {
+  font-size: 24px !important;
+  color: black !important;
+}
+
+.carrinho-logo:hover {
+  color: #4d3efc !important;
 }
 
 .perfill-icon {
   height: 2rem !important;
+  color: black !important;
+}
+
+.perfill-icon:hover {
+  color: #4d3efc !important;
 }

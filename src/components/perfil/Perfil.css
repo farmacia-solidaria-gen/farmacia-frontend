@@ -17,14 +17,15 @@
   }
   
   .imgPerfil {
-    border-radius: 25% 6% 25% 67% / 39% 38% 62% 25%;
     width: 80% !important;
     border-radius: 50% !important;
     margin: 0 auto !important;
     display: block !important;
-    border: 3px solid black !important;
-    height: 60%;
-    margin-top: 2rem !important;
+    border-style: double;
+    border-width: 6px;
+    border-color: #4d3efc;
+    height: 200px !important;
+    width: 200px !important;
     align-items: center !important;
   }
   
@@ -48,3 +49,13 @@
     text-decoration: underline;
   }
   
+  .titulo-perfil {
+    font-family: 'Quicksand' !important;
+    font-weight: 700 !important;
+  }
+
+
+  .subtitulo-perfil {
+    font-family: 'Quicksand' !important;
+    font-weight: 500 !important;
+  }

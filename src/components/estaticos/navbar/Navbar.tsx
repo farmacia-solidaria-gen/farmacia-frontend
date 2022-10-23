@@ -101,8 +101,8 @@ function Navbar() {
 
               <Link to="/carrinho" className="text-decorator-none">
                 <Box mx={1} className="cursor">
-                  <Typography className='principais' variant="h6">
-                    <ShoppingCartIcon/>
+                  <Typography variant="h6">
+                    <ShoppingCartIcon className='carrinho-logo'/>
                   </Typography>
                 </Box>
               </Link>

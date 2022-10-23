@@ -48,8 +48,8 @@ function Perfil() {
             
           </Grid>
           <Grid xs={9} justifyContent='center' className='perfilusuario'>
-            <Typography variant='h4' align='center'>Produtos de {usuario.nome}</Typography>
-            Você tem um total de {usuario.produto?.length} produtos cadastrados.
+            <Typography className='titulo-perfil' variant='h4' align='center'>Produtos de {usuario.nome}</Typography>
+            <Typography className='subtitulo-perfil' align='center'> Você tem um total de {usuario.produto?.length} produtos cadastrados.</Typography>
 
             <div className="postUser">
             {usuario.produto?.map((produtos) => (
