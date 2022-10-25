@@ -2,6 +2,7 @@
 
 # 📁 Acesso ao projeto: https://farmaciasolidaria.netlify.app
 
+<br>
 
 ![image](https://user-images.githubusercontent.com/113915415/196948142-d223377d-46a2-4c64-83fa-ae5b7ff94d57.png)
 
@@ -15,6 +16,8 @@
 
 Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O usuário deve se cadastrar, para logar e ter acesso ao site, podendo fazer postagens dos seus produtos e incluir categorias sugeridas para futuros produtos.
 
+<br>
+
 # :hammer: Componentes do Projeto
 `Home` 
 `Cadastro` 
@@ -26,7 +29,7 @@ Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O 
 `Perfil`
 `Carrinho` 
 
-
+<br>
 
 # 💻 Tecnologias
 
@@ -43,6 +46,8 @@ Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O 
   <img align="center" alt="Material UI" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg">
   <img align="center" alt="Trello" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg">
 </div>
+
+<br>
 
 # ✒️ Desenvolvedores
 <div>
