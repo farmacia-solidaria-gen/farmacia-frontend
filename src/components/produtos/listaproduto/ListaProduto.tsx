@@ -113,20 +113,18 @@ function ListaProduto() {
                 <CardContent className='botoes'>
                   <Box display="flex" justifyContent="center" mb={1.5}>
 
-                    <Link to={`/formularioProduto/${produto.id}`} className="text-decorator-none" >
-                      <Box mx={1}>
-                        <Button variant="contained" className="botao-atualizar" size='small' color="primary" >
-                        Comprar 
-                        </Button>
-                      </Box>
-                    </Link>
-                    <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
+                  <Link to={`/carrinho/${produto.id}`} className='text-decorator-none'>
+                            <Button variant="contained" className="botao-comprar" fullWidth  color="secondary">
+                                Adicionar ao carrinho
+                            </Button>
+                        </Link>
+                    {/* <Link to={`/deletarProduto/${produto.id}`} className="text-decorator-none">
                       <Box mx={1}>
                         <Button variant="contained" className="botao-deletar" size='small' color="secondary">
                           deletar
                         </Button>
                       </Box>
-                    </Link>
+                    </Link> */}
                   </Box>
                 </CardContent>
 
