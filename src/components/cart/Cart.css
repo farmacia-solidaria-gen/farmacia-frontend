@@ -1,0 +1,51 @@
+
+.caixaCart{
+    align-self: center;
+    justify-self: center;
+    margin:80px
+   
+}
+
+.cartContainer{
+    display: flex!important;
+    width: 800px!important;
+    /* background-color: #D2FCF6 !important; */
+}
+
+.cardProduct{
+    display: flex!important;
+    align-items: center;
+    
+}
+
+.cardProductInfo{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 50px;
+    width: 250px;
+}
+
+.cardProductButton{
+    margin-bottom: 5px;
+}
+.cardProductButton button{
+    width: 200px!important;
+}
+
+.botaoCompra{
+    background-color: #30d1bc !important;
+    color: white !important;
+    justify-content: center;
+    margin-left: 12px;
+}
+
+.botaoCancelarCompra{
+    background-color: #4d3efc !important;
+    color: white !important;
+    justify-content: center;
+    margin-left: 12px;
+    text-decoration: none !important;
+   
+ 
+}
