@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Box, Card, CardActions, CardContent } from "@mui/material";
 import './DeletarProduto.css';
-import { useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../service/Service';
-import { toast } from 'react-toastify';
 import Produto from '../../../models/Produto';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 function DeletarProduto() {

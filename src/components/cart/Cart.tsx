@@ -150,7 +150,7 @@ function Cart() {
 
                     <Link to="/produtos" className="cardProductButton">
                         <Box mx={1}>
-                            <Button onClick={cancelar} variant="contained" size='small' color="secondary" className='botaoCancelarCompra'>
+                            <Button onClick={cancelar} variant="contained" size='small' color="secondary" className='botaoCancelarCompra text-decorator-none'>
                                 Cancelar
                             </Button>
                         </Box>

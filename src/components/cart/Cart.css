@@ -28,9 +28,11 @@
 
 .cardProductButton{
     margin-bottom: 5px;
+    text-decoration: none !important;
 }
 .cardProductButton button{
     width: 200px!important;
+    text-decoration: none !important;
 }
 
 .botaoCompra{
@@ -46,6 +48,5 @@
     justify-content: center;
     margin-left: 12px;
     text-decoration: none !important;
-   
- 
 }
+
