@@ -31,18 +31,9 @@ function Equipe() {
             <Typography
               variant="h5"
               className="txt-equipe"
-              gutterBottom
-              color="textPrimary"
               component="h5"
-              style={{
-                color: "black",
-                fontWeight: "light",
-                fontSize: 22,
-                marginTop: 20,
-              }}
-              align="center"
             >
-              Conheça a equipe de desenvolvedores que tornaram esse projeto possível:
+              Somos um grupo formado por Desesenvolvedores FullStack Juniors. Entre nossas responsabilidades está incluso: O trabalho em equipe para desenvolver, testar, e manter a aplicação. Projetar, desenvolver e testar unidades de acordo com os padrões estabelecidos. Participar das revisões do projeto para buscar diferentes soluções. Analisar e resolver problemas técnicos. E por fim, aderir aos princípios de desenvolvimento de alta qualidade, entregando soluções dentro do prazo. Conheça melhor cada participante que tornou esse projeto possível:
             </Typography>
           </Box>
           <Grid xs={8} style={{ justifyContent: "center", display: "flex", gap: '200px'}} className='margin-equipe'>
