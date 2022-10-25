@@ -8,11 +8,15 @@
 .txt-equipe {
   display: flex !important;
   justify-content: center !important;
+  text-align: justify !important;
   align-items: center !important;
   font-family: 'Quicksand' !important;
   font-weight: 500 !important;
   font-size: 20px !important;
-  margin-bottom: 48px !important
+  margin-top: 18px !important;
+  margin-bottom: 48px !important;
+  margin-left: 120px !important;
+  margin-right: 120px !important;
 }
 
 .margin-titulo-equipe {
