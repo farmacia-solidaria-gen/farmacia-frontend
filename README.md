@@ -1,5 +1,6 @@
-# Link para acessar o site:
-https://farmaciasolidaria.netlify.app
+<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/></p>
+
+# 📁 Acesso ao projeto: https://farmaciasolidaria.netlify.app
 
 
 ![image](https://user-images.githubusercontent.com/113915415/196948142-d223377d-46a2-4c64-83fa-ae5b7ff94d57.png)
@@ -14,16 +15,17 @@ https://farmaciasolidaria.netlify.app
 
 Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O usuário deve se cadastrar, para logar e ter acesso ao site, podendo fazer postagens dos seus produtos e incluir categorias sugeridas para futuros produtos.
 
-O site contém os componentes :
+# :hammer: Componentes do Projeto- 
+`Home` 
+`Cadastro` 
+`Login` 
+`NavBar`
+`Footer`
+`Produtos - Crud`
+`Categoria - Crud`
+`Perfil`
+`Carrinho` 
 
-Home
-Cadastro
-Login
-Navbar
-Footer
-Produtos - Cadastro de Produto
-Categoria - Cadastro de Categoria
-Perfil - Cadastro de Usuário
 
 
 # <img width='40' height='40' src='https://cdn-icons-png.flaticon.com/512/3422/3422658.png'> Tecnologias
@@ -40,4 +42,15 @@ Perfil - Cadastro de Usuário
   <img align="center" alt="Netlify" height="30" width="30" src="https://pics.freeicons.io/uploads/icons/png/11987465721551941710-512.png">
   <img align="center" alt="Material UI" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg">
   <img align="center" alt="Trello" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/trello/trello-plain.svg">
+</div>
+
+# ✒️ Desenvolvedores
+<div>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/Andrei.4c0c8e3e54a7586eb70fe6d2057bf5f2.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/gabriel.3878d7f7f9c3c2ef9b9492e40b118a43.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/leticia.035b09770c64b6eddafebee78ad2b098.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/maikon.ce5202b0cb599260496f48c7e7a28969.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/pamela.1a7408792abe5ac21e6e565414f0c189.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/veronica.60ecd3560b4cdf3df12749a6a6ccbdb8.svg'>
+  <img height="100" width="100" src='https://farmaciasolidaria.netlify.app/static/media/wesley.596feb91d92931119df7220ec751bd95.svg'>
 </div>
