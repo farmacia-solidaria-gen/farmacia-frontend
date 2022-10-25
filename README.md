@@ -28,7 +28,7 @@ Projeto Fármacia Solidária -> Front-end que faz integração com o Back-End O 
 
 
 
-# <img width='40' height='40' src='https://cdn-icons-png.flaticon.com/512/3422/3422658.png'> Tecnologias
+# 💻 Tecnologias
 
 <div style="display: inline_block"><br>
   <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
