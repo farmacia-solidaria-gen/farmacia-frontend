@@ -2,11 +2,12 @@
 https://farmaciasolidaria.netlify.app
 
 
-![faramaciasoli](https://user-images.githubusercontent.com/113915415/196948142-d223377d-46a2-4c64-83fa-ae5b7ff94d57.png)
+![image](https://user-images.githubusercontent.com/113915415/196948142-d223377d-46a2-4c64-83fa-ae5b7ff94d57.png)
 
-![farmahomepng](https://user-images.githubusercontent.com/113915415/196948189-7741f6ae-ac05-4889-b46d-eb5e260904ef.png)
+![image](https://user-images.githubusercontent.com/113915415/196948189-7741f6ae-ac05-4889-b46d-eb5e260904ef.png)
 
-![produtosfaro](![image](https://user-images.githubusercontent.com/113915415/197874659-2e73ade7-7d3c-44d7-8736-d705efceb70b.png)
+![image](https://user-images.githubusercontent.com/113915415/197874659-2e73ade7-7d3c-44d7-8736-d705efceb70b.png)
+
 ![image](https://user-images.githubusercontent.com/113915415/197874718-5d4b966a-ce0e-474e-965b-86b2eac66546.png)
 
 
