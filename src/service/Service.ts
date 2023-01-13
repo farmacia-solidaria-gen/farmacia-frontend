@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://farmacia-solidaria-pgq9r9s0g-gabrielrn.vercel.app'
-    //baseURL: 'https://farmaciasolidaria.onrender.com/'
+    baseURL: 'https://farmaciasolidaria.onrender.com/'
     //baseURL: 'https://farmaciasolidaria.herokuapp.com/'
 })
 
