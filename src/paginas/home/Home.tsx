@@ -42,7 +42,7 @@ function Home() {
         <Grid alignItems="center" item xs={12}>
           <Box paddingX={1}>
             <Typography className='titulo-home' variant="h3" gutterBottom color="textPrimary" component="h3" align="center">
-              Seja Bem-Vinde a Farmácia Solidária!
+              Seja Bem-Vindo(a) a Farmácia Solidária!
             </Typography>
 
             <Typography className='subtitulo-home' variant="h5" gutterBottom color="textPrimary" component="h5" align="center">
